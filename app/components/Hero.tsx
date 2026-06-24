@@ -3,7 +3,7 @@ import { BookingButton } from "./BookingButton";
 import { GoogleRating } from "./GoogleRating";
 import { CheckIcon } from "./icons";
 
-// Full-screen hero. Uses a layered navy gradient as the signature background
+// Full-screen hero. Uses a layered charcoal + sage gradient as the signature
 // until the client provides a hero photo (drop it at /public/images/hero.jpg
 // and uncomment the <img> layer below + set objectPosition).
 export function Hero() {
@@ -27,7 +27,7 @@ export function Hero() {
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(120% 90% at 80% 0%, color-mix(in srgb, var(--color-accent) 35%, transparent) 0%, transparent 55%), linear-gradient(160deg, var(--color-ink) 0%, color-mix(in srgb, var(--color-ink) 80%, black) 100%)",
+            "radial-gradient(120% 90% at 80% 0%, color-mix(in srgb, var(--color-sage) 30%, transparent) 0%, transparent 55%), linear-gradient(160deg, var(--color-ink) 0%, color-mix(in srgb, var(--color-ink) 70%, black) 100%)",
         }}
       />
       <div

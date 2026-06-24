@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { site } from "../lib/site";
 import { trackEvent } from "../lib/analytics";
 import { BookingButton } from "./BookingButton";
-import { MenuIcon, CloseIcon, RollerIcon, PhoneIcon } from "./icons";
+import { Logo } from "./Logo";
+import { MenuIcon, CloseIcon, PhoneIcon } from "./icons";
 
 const NAV = [
   { href: "#prestations", label: "Prestations" },
@@ -44,14 +45,8 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <a
-          href="#top"
-          className="flex items-center gap-2 font-serif text-lg font-bold text-ink"
-        >
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink text-bg">
-            <RollerIcon className="text-lg" />
-          </span>
-          {site.name}
+        <a href="#top" aria-label={`${site.name} — accueil`} className="flex items-center">
+          <Logo size={22} />
         </a>
 
         <nav className="hidden items-center gap-6 lg:flex">

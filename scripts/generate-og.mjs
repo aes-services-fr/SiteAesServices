@@ -15,11 +15,11 @@ const BRAND = {
   name: "AES Services",
   tagline: "Peintre en bâtiment à Bourges",
   subline: "Devis gratuit · Bourges et 60 km alentour",
-  bg: "#15243f", // deep navy ink
-  bgSoft: "#1d3050",
-  accent: "#e07a44", // warm terracotta
-  ink: "#f4efe8",
-  muted: "#aeb4c2",
+  bg: "#2c2e30", // charcoal (logo black)
+  bgSoft: "#3a3d3f",
+  accent: "#a8cd9e", // sage green (logo)
+  ink: "#f5f7f3",
+  muted: "#b9beb6",
 };
 
 function escapeXml(s) {

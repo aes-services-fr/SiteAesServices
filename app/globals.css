@@ -1,18 +1,22 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ */
-/* Design tokens — palette "artisan fiable" : navy profond + terracotta */
-/* chaleureux sur fond crème. Exposés en variables Tailwind via @theme.  */
+/* Design tokens — charte AES Services : noir charbon + vert sauge.     */
+/* `sage` = vert exact du logo (décoratif : point, soulignés, aplats).  */
+/* `accent` = vert plus profond de la même famille, lisible en texte /  */
+/* bouton sur fond blanc ou foncé (contraste WCAG AA).                  */
 /* ------------------------------------------------------------------ */
 @theme {
-  --color-bg: #f8f5f0;
-  --color-bg-soft: #efe9e0;
-  --color-ink: #16243f;
-  --color-ink-soft: #44506a;
-  --color-accent: #d96f3f;
-  --color-accent-soft: #ecae8a;
-  --color-muted: #8b8f9b;
-  --color-line: #e4ddd2;
+  --color-bg: #ffffff;
+  --color-bg-soft: #f2f5ef;
+  --color-ink: #2c2e30;
+  --color-ink-soft: #565b57;
+  --color-accent: #4f7a43;
+  --color-accent-soft: #cfe6c8;
+  --color-sage: #a8cd9e;
+  --color-sage-soft: #d8e9d1;
+  --color-muted: #8b908a;
+  --color-line: #e6e9e2;
 
   --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;

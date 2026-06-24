@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { site } from "../lib/site";
-import { RollerIcon, PhoneIcon, MailIcon, MapPinIcon } from "./icons";
+import { Logo } from "./Logo";
+import { PhoneIcon, MailIcon, MapPinIcon } from "./icons";
 import { ManageCookiesButton } from "./Analytics";
 
 const NAV = [
@@ -21,12 +22,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
         {/* Brand */}
         <div className="md:col-span-2">
-          <div className="flex items-center gap-2 font-serif text-lg font-bold">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-white">
-              <RollerIcon className="text-lg" />
-            </span>
-            {site.name}
-          </div>
+          <Logo size={24} tone="light" />
           <p className="mt-3 max-w-sm text-sm text-bg/70">
             {site.trade} à {site.city}. Peinture intérieure et extérieure,
             ravalement de façade et décoration. Devis gratuit dans un rayon de{" "}
