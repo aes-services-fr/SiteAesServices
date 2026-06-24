@@ -2,8 +2,10 @@ import type { NextConfig } from "next";
 import fs from "node:fs";
 import path from "node:path";
 
-// Repo name used for GitHub Pages project-site basePath (https://<user>.github.io/<repo>)
-const REPO_NAME = "siteaesservices";
+// Repo name used for GitHub Pages project-site basePath
+// (https://<user>.github.io/<repo>). Case-sensitive: must match the repo name
+// exactly as GitHub serves it.
+const REPO_NAME = "SiteAesServices";
 
 // Custom domain detection: if public/CNAME exists, the site is served from the
 // domain root, so we must NOT prefix paths with /<repo>.
