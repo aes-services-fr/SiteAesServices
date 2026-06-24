@@ -13,9 +13,8 @@ const PUBLIC = path.join(ROOT, "public");
 // --- Brand (keep in sync with app/lib/site.ts) -----------------------------
 const BRAND = {
   name: "AES Services",
-  tagline: "Peintre en bâtiment",
-  // TODO: replace once the business info is confirmed (city / value prop).
-  subline: "Devis gratuit · Artisan certifié",
+  tagline: "Peintre en bâtiment à Bourges",
+  subline: "Devis gratuit · Bourges et 60 km alentour",
   bg: "#15243f", // deep navy ink
   bgSoft: "#1d3050",
   accent: "#e07a44", // warm terracotta

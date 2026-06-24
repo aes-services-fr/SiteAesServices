@@ -1,12 +1,7 @@
 import type { MetadataRoute } from "next";
-import { site } from "./lib/site";
+import { baseUrl } from "./lib/seo";
 
 export const dynamic = "force-static";
-
-const baseUrl =
-  site.domain && site.domain.startsWith("http")
-    ? site.domain
-    : "https://nyokaa.github.io/siteaesservices";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

@@ -3,6 +3,7 @@ import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { site } from "./lib/site";
 import { asset } from "./lib/asset";
+import { baseUrl } from "./lib/seo";
 import { Analytics } from "./components/Analytics";
 
 const fraunces = Fraunces({
@@ -17,11 +18,6 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
 });
-
-const baseUrl =
-  site.domain && site.domain.startsWith("http")
-    ? site.domain
-    : "https://nyokaa.github.io/siteaesservices";
 
 const title = `${site.name} — ${site.trade}${
   site.city && !site.city.startsWith("<") ? ` à ${site.city}` : ""
@@ -47,6 +43,9 @@ export const metadata: Metadata = {
     "décoration murale",
     site.city,
   ].filter((k) => k && !k.startsWith("<")),
+  // metadataBase already carries the basePath, so absolute metadata URLs use
+  // plain "/…" paths (Next joins them to metadataBase). Only on-page asset
+  // links (icons, <img>) use asset().
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -57,7 +56,7 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: asset("/og.jpg"),
+        url: "/og.jpg",
         width: 1200,
         height: 630,
         alt: `${site.name} — ${site.trade}`,
@@ -68,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: [asset("/og.jpg")],
+    images: ["/og.jpg"],
   },
   icons: {
     icon: asset("/icon.png"),

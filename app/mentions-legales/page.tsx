@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "../lib/site";
+import { GA_ID } from "../lib/analytics";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
@@ -60,7 +61,20 @@ export default function MentionsLegales() {
         </p>
       </section>
 
-      {/* La section Cookies est ajoutée à l'étape 6 si un GA ID est fourni. */}
+      {GA_ID && (
+        <section id="cookies" className="mt-8 scroll-mt-24 space-y-2 text-sm leading-relaxed">
+          <h2 className="text-xl font-semibold text-ink">Cookies</h2>
+          <p className="text-ink-soft">
+            Ce site utilise des cookies de mesure d&apos;audience (Google
+            Analytics) afin d&apos;analyser la fréquentation et améliorer le
+            contenu. Ces cookies ne sont déposés qu&apos;après votre
+            consentement explicite via le bandeau prévu à cet effet. Vous pouvez
+            modifier ou retirer votre choix à tout moment en cliquant sur «&nbsp;Gérer
+            les cookies&nbsp;» en bas de page. Aucun cookie publicitaire
+            n&apos;est utilisé.
+          </p>
+        </section>
+      )}
     </main>
   );
 }
