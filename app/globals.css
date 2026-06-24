@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Design tokens — palette "artisan fiable" : navy profond + terracotta */
+/* chaleureux sur fond crème. Exposés en variables Tailwind via @theme.  */
+/* ------------------------------------------------------------------ */
+@theme {
+  --color-bg: #f8f5f0;
+  --color-bg-soft: #efe9e0;
+  --color-ink: #16243f;
+  --color-ink-soft: #44506a;
+  --color-accent: #d96f3f;
+  --color-accent-soft: #ecae8a;
+  --color-muted: #8b8f9b;
+  --color-line: #e4ddd2;
+
+  --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* offset for sticky header when jumping to anchors */
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Reusable utility for the FAQ accordion: collapse via CSS grid so all
+   answers stay in the initial DOM (good for SEO + no AnimatePresence). */
+.faq-grid {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+.faq-grid[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+.faq-grid > div {
+  overflow: hidden;
+}
