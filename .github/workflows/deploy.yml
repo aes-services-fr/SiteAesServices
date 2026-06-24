@@ -60,3 +60,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # Pages deployments are slow to leave the queue on this account
+          # (~9-10 min), right at the default 10 min timeout. Allow up to 20 min.
+          timeout: 1200000
