@@ -59,7 +59,7 @@ export function ContactForm() {
       />
       <button
         type="submit"
-        className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[color-mix(in_srgb,var(--color-accent)_88%,black)]"
+        className="inline-flex items-center justify-center rounded-full bg-cta px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-[color-mix(in_srgb,var(--color-cta)_88%,black)]"
       >
         Envoyer ma demande de devis
       </button>

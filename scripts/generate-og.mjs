@@ -41,7 +41,7 @@ function ogSvg() {
   <!-- accent brush stroke -->
   <rect x="0" y="0" width="14" height="630" fill="${accent}"/>
   <rect x="90" y="150" width="120" height="14" rx="7" fill="${accent}"/>
-  <text x="90" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="700" fill="${ink}">${escapeXml(name)}</text>
+  <text x="90" y="300" font-family="Helvetica, Arial, sans-serif" font-size="84" font-weight="700" fill="${ink}">${escapeXml(name)}</text>
   <text x="92" y="372" font-family="Helvetica, Arial, sans-serif" font-size="44" font-weight="600" fill="${accent}">${escapeXml(tagline)}</text>
   <text x="92" y="450" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="${muted}">${escapeXml(subline)}</text>
 </svg>`;
@@ -53,7 +53,7 @@ function iconSvg(size) {
   return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
   <rect width="${size}" height="${size}" rx="${Math.round(size * 0.22)}" fill="${bg}"/>
   <rect x="${Math.round(size * 0.18)}" y="${Math.round(size * 0.2)}" width="${Math.round(size * 0.16)}" height="${Math.round(size * 0.6)}" rx="${Math.round(size * 0.04)}" fill="${accent}"/>
-  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" dx="${Math.round(size * 0.12)}" font-family="Georgia, serif" font-size="${fs1}" font-weight="700" fill="${ink}">A</text>
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" dx="${Math.round(size * 0.12)}" font-family="Helvetica, Arial, sans-serif" font-size="${fs1}" font-weight="700" fill="${ink}">A</text>
 </svg>`;
 }
 

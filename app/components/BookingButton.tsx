@@ -27,7 +27,7 @@ export function BookingButton({
 }) {
   const styles: Record<Variant, string> = {
     primary:
-      "bg-accent text-white shadow-sm hover:bg-[color-mix(in_srgb,var(--color-accent)_88%,black)]",
+      "bg-cta text-ink shadow-sm hover:bg-[color-mix(in_srgb,var(--color-cta)_88%,black)]",
     secondary:
       "bg-ink text-bg hover:bg-[color-mix(in_srgb,var(--color-ink)_88%,black)]",
     ghost:

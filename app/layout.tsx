@@ -1,23 +1,9 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { site } from "./lib/site";
 import { asset } from "./lib/asset";
 import { baseUrl } from "./lib/seo";
 import { Analytics } from "./components/Analytics";
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces",
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 const title = `${site.name} — ${site.trade}${
   site.city && !site.city.startsWith("<") ? ` à ${site.city}` : ""
@@ -79,7 +65,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" className={`${fraunces.variable} ${inter.variable}`}>
+    <html lang="fr">
       <body>
         {children}
         <Analytics />

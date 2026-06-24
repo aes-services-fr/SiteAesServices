@@ -15,11 +15,13 @@
   --color-accent-soft: #cfe6c8;
   --color-sage: #a8cd9e;
   --color-sage-soft: #d8e9d1;
+  --color-cta: #f5a721; /* couleur des boutons d'appel à l'action */
   --color-muted: #8b908a;
   --color-line: #e6e9e2;
 
-  --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  /* Police Helvetica (comme le logo) sur tout le site. */
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 :root {
@@ -41,8 +43,9 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-serif);
-  letter-spacing: -0.01em;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 @media (prefers-reduced-motion: reduce) {

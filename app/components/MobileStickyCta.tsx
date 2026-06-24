@@ -30,7 +30,7 @@ export function MobileStickyCta() {
           <a
             href={`tel:${site.phone}`}
             onClick={() => trackEvent("cta_call", { source: "mobile_sticky" })}
-            className="flex flex-1 items-center justify-center gap-2 rounded-full bg-accent px-4 py-3 text-sm font-semibold text-white"
+            className="flex flex-1 items-center justify-center gap-2 rounded-full bg-cta px-4 py-3 text-sm font-semibold text-ink"
           >
             <PhoneIcon className="text-base" />
             Appeler
@@ -38,7 +38,7 @@ export function MobileStickyCta() {
           <a
             href="#contact"
             onClick={() => trackEvent("cta_quote", { source: "mobile_sticky" })}
-            className="flex flex-1 items-center justify-center gap-2 rounded-full bg-ink px-4 py-3 text-sm font-semibold text-bg"
+            className="flex flex-1 items-center justify-center gap-2 rounded-full bg-ink px-4 py-3 text-sm font-semibold text-bg ring-1 ring-cta"
           >
             <MailIcon className="text-base" />
             Devis gratuit
