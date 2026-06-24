@@ -1,0 +1,115 @@
+// Inline SVG icons (no icon dependency). All accept standard SVG props so size
+// and color follow font-size / currentColor by default.
+import type { SVGProps } from "react";
+
+type P = SVGProps<SVGSVGElement>;
+
+const base = {
+  width: "1em",
+  height: "1em",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 2,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+};
+
+export const PhoneIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+  </svg>
+);
+
+export const WhatsAppIcon = (p: P) => (
+  <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" {...p}>
+    <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z" />
+  </svg>
+);
+
+export const StarIcon = (p: P) => (
+  <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" {...p}>
+    <path d="M12 2.5l2.9 6.06 6.6.78-4.9 4.5 1.32 6.56L12 17.9l-5.92 2.5L7.4 13.84 2.5 9.34l6.6-.78L12 2.5z" />
+  </svg>
+);
+
+export const CheckIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M20 6L9 17l-5-5" />
+  </svg>
+);
+
+export const ShieldIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    <path d="M9 12l2 2 4-4" />
+  </svg>
+);
+
+export const AwardIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <circle cx="12" cy="8" r="6" />
+    <path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5" />
+  </svg>
+);
+
+export const MapPinIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+    <circle cx="12" cy="10" r="3" />
+  </svg>
+);
+
+export const MailIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <rect x="2" y="4" width="20" height="16" rx="2" />
+    <path d="M22 7l-10 6L2 7" />
+  </svg>
+);
+
+export const ClockIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M12 7v5l3 2" />
+  </svg>
+);
+
+export const RollerIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <rect x="3" y="4" width="13" height="6" rx="1" />
+    <path d="M16 7h3a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-7a2 2 0 0 0-2 2v1" />
+    <rect x="9" y="18" width="4" height="3" rx="1" />
+  </svg>
+);
+
+export const ChevronDownIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M6 9l6 6 6-6" />
+  </svg>
+);
+
+export const MenuIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M3 12h18M3 6h18M3 18h18" />
+  </svg>
+);
+
+export const CloseIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M18 6L6 18M6 6l12 12" />
+  </svg>
+);
+
+export const SparkleIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z" />
+  </svg>
+);
+
+export const HandshakeIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M11 17l2 2a1 1 0 0 0 1.4 0l3.6-3.6" />
+    <path d="M3 11l4-4 4 1 3-1 6 5" />
+    <path d="M3 11l3 3M21 11l-3 3" />
+  </svg>
+);

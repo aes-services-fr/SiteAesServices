@@ -3,6 +3,7 @@ import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { site } from "./lib/site";
 import { asset } from "./lib/asset";
+import { Analytics } from "./components/Analytics";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -80,7 +81,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr" className={`${fraunces.variable} ${inter.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
