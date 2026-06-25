@@ -10,7 +10,7 @@ export function Hero() {
   const valueProps = [
     "Devis gratuit",
     has(site.experienceYears)
-      ? `${site.experienceYears} ans d'expérience`
+      ? `Plus de ${site.experienceYears} ans d'expérience`
       : "Travail soigné & garanti",
     "Artisan local de confiance",
   ];

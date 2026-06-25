@@ -37,11 +37,10 @@ export function About() {
           <p className="mt-4 text-ink-soft">
             {site.name} accompagne particuliers et professionnels du secteur de{" "}
             {site.city} pour tous leurs travaux de peinture et de décoration.
-            {has(site.experienceYears)
-              ? ` Fort de ${site.experienceYears} ans d'expérience, je mets `
-              : " Je mets "}
-            un point d&apos;honneur à livrer un travail net, durable et conforme
-            à vos attentes.
+            Artisan peintre autodidacte et passionné, fort de plus de{" "}
+            {site.experienceYears} ans d&apos;expérience, je mets un point
+            d&apos;honneur à livrer un travail net, durable et conforme à vos
+            attentes — préparation soignée, finitions propres et délais tenus.
           </p>
 
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">

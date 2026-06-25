@@ -49,7 +49,7 @@ export const site = {
   artisanName: TODO, // prénom + nom de l'artisan principal (à confirmer)
   city: "Bourges",
   radiusKm: "60",
-  experienceYears: TODO, // années d'expérience (à confirmer)
+  experienceYears: "2", // affiché « plus de 2 ans »
 
   // --- Contact ---------------------------------------------------------------
   phone: "+33671434483",
@@ -127,60 +127,59 @@ export const site = {
 // --- Prestations -------------------------------------------------------------
 export const services: Service[] = [
   {
-    id: "peinture-interieure",
-    title: "Peinture intérieure",
+    id: "mise-en-peinture",
+    title: "Mise en peinture",
     description:
-      "Murs, plafonds et boiseries : préparation des supports, rebouchage, sous-couche et finitions soignées pour un rendu net et durable.",
-    price: "Sur devis",
+      "Impression, révision d'enduit et deux couches de finition, pour des murs et plafonds nets et durables.",
+    price: "À partir de 20 €/m²",
     category: "Intérieur",
+  },
+  {
+    id: "ratissage-poncage",
+    title: "Ratissage & ponçage",
+    description:
+      "Ratissage en une à deux couches puis ponçage, pour des supports parfaitement lisses avant peinture.",
+    price: "À partir de 20 €/m²",
+    category: "Intérieur",
+  },
+  {
+    id: "bandes-placo",
+    title: "Pose de bandes & placo",
+    description:
+      "Collage, doublage et traitement des bandes (joints) du placo, pour une base saine et impeccable.",
+    price: "À partir de 10 €/m²",
+    category: "Intérieur",
+  },
+  {
+    id: "decoration-couleur",
+    title: "Décoration & mise en couleur",
+    description:
+      "Murs d'accent et teintes personnalisées (bleu canard, taupe, sauge…) pour donner du caractère à vos pièces.",
+    price: "Sur devis",
+    category: "Décoration",
+  },
+  {
+    id: "boiseries-menuiseries",
+    title: "Boiseries & menuiseries",
+    description:
+      "Peinture de portes, volets, radiateurs et fenêtres, dans la finition de votre choix.",
+    price: "Sur devis",
+    category: "Décoration",
   },
   {
     id: "peinture-exterieure",
     title: "Peinture extérieure",
     description:
-      "Volets, portails, bardages et menuiseries : protection durable contre les intempéries et les UV, dans la teinte de votre choix.",
+      "Volets, façades et chantiers extérieurs, protégés durablement contre les intempéries.",
     price: "Sur devis",
     category: "Extérieur",
-  },
-  {
-    id: "ravalement-facade",
-    title: "Ravalement de façade",
-    description:
-      "Nettoyage, traitement et mise en peinture de façade pour protéger votre bâtiment et lui redonner tout son éclat.",
-    price: "Sur devis",
-    category: "Façade",
-  },
-  {
-    id: "papier-peint",
-    title: "Pose de papier peint",
-    description:
-      "Papier peint, intissé et toile de verre, posés avec des raccords précis et des finitions impeccables.",
-    price: "Sur devis",
-    category: "Décoration",
-  },
-  {
-    id: "enduit-decoratif",
-    title: "Enduit décoratif",
-    description:
-      "Béton ciré, stuc et effets matières pour personnaliser vos murs et créer des ambiances uniques.",
-    price: "Sur devis",
-    category: "Décoration",
-  },
-  {
-    id: "conseil-couleurs",
-    title: "Conseil & décoration murale",
-    description:
-      "Accompagnement dans le choix des teintes et des finitions pour mettre en valeur chaque pièce.",
-    price: "Sur devis",
-    category: "Décoration",
   },
 ];
 
 export const galleryCategories: GalleryCategory[] = [
   "Intérieur",
-  "Extérieur",
-  "Façade",
   "Décoration",
+  "Extérieur",
 ];
 
 // Placeholder gallery — replaced once client photos are provided.
