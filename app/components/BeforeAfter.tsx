@@ -20,11 +20,11 @@ export function BeforeAfter() {
         </p>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-3">
+      <div className="flex flex-wrap justify-center gap-8">
         {beforeAfter.map((pair) => (
           <figure
             key={pair.title}
-            className="overflow-hidden rounded-2xl border border-line bg-white/60"
+            className="w-full max-w-md overflow-hidden rounded-2xl border border-line bg-white/60"
           >
             <div className="grid grid-cols-2">
               <div className="relative">

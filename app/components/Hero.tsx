@@ -28,17 +28,18 @@ export function Hero() {
         className="absolute inset-0 -z-20 h-full w-full object-cover"
         fetchPriority="high"
       />
-      {/* Charcoal scrim (stronger on the left where the text sits) + sage glow */}
+      {/* Lighter scrim: darker top & bottom (behind text/CTAs), lighter middle
+          so the photo stays visible. Text legibility kept via text-shadow. */}
       <div
         aria-hidden
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(110% 80% at 85% 0%, color-mix(in srgb, var(--color-sage) 22%, transparent) 0%, transparent 55%), linear-gradient(95deg, color-mix(in srgb, var(--color-ink) 94%, transparent) 0%, color-mix(in srgb, var(--color-ink) 80%, transparent) 45%, color-mix(in srgb, var(--color-ink) 45%, transparent) 100%)",
+            "radial-gradient(120% 80% at 85% 0%, color-mix(in srgb, var(--color-sage) 20%, transparent) 0%, transparent 55%), linear-gradient(180deg, color-mix(in srgb, var(--color-ink) 78%, transparent) 0%, color-mix(in srgb, var(--color-ink) 40%, transparent) 32%, color-mix(in srgb, var(--color-ink) 40%, transparent) 62%, color-mix(in srgb, var(--color-ink) 82%, transparent) 100%)",
         }}
       />
 
-      <div className="mx-auto flex max-w-6xl flex-col items-start gap-7 px-4 py-24 sm:px-6 sm:py-32 lg:py-40">
+      <div className="mx-auto flex max-w-6xl flex-col items-start gap-7 px-4 py-24 [text-shadow:0_1px_14px_rgba(0,0,0,0.5)] sm:px-6 sm:py-32 lg:py-40">
         {site.google.hasReviews && (
           <div className="rounded-full bg-white/10 px-4 py-1.5 ring-1 ring-white/15">
             <GoogleRating variant="dark" />

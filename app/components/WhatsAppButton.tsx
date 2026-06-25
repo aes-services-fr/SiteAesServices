@@ -19,10 +19,10 @@ export function WhatsAppButton() {
       rel="noopener noreferrer"
       aria-label="Nous écrire sur WhatsApp"
       onClick={() => trackEvent("whatsapp_click", { source: "whatsapp_float" })}
-      className="fixed bottom-5 left-5 z-40 flex h-14 w-14 items-center justify-center rounded-full text-white shadow-lg transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+      className="fixed right-4 bottom-24 z-40 flex h-14 w-14 items-center justify-center rounded-full text-white shadow-lg transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white md:right-6 md:bottom-6"
       style={{ backgroundColor: "#25d366" }}
     >
-      <WhatsAppIcon className="text-[28px]" />
+      <WhatsAppIcon className="text-[30px]" />
     </a>
   );
 }

@@ -211,28 +211,14 @@ export type BeforeAfter = {
   afterAlt: string;
 };
 
-// Same-room before/after pairs.
+// Same-room before/after pairs (confirmed by the client).
 export const beforeAfter: BeforeAfter[] = [
   {
-    title: "Dressing sous escalier",
-    before: "/images/realisations/r30.jpg",
-    after: "/images/realisations/r02.jpg",
-    beforeAlt: "Dressing en cours de peinture, mur bleu canard et masquage — chantier à Bourges",
-    afterAlt: "Dressing fini en bleu canard avec rangements blancs — peintre à Bourges (18)",
-  },
-  {
-    title: "Séjour & verrière",
-    before: "/images/realisations/r21.jpg",
-    after: "/images/realisations/r20.jpg",
-    beforeAlt: "Séjour en cours de mise en peinture, sol protégé et pots de peinture — chantier Bourges",
-    afterAlt: "Séjour fini, mur taupe et verrière atelier — peinture décorative à Bourges (18)",
-  },
-  {
-    title: "Salle d'eau",
-    before: "/images/realisations/r25.jpg",
-    after: "/images/realisations/r32.jpg",
-    beforeAlt: "Salle d'eau en préparation, murs ratissés et poncés — chantier à Bourges",
-    afterAlt: "Salle d'eau finie, faïence et sol béton ciré — peintre en bâtiment à Bourges (18)",
+    title: "Façade & volet",
+    before: "/images/realisations/r18.jpg",
+    after: "/images/realisations/r22.jpg",
+    beforeAlt: "Façade et volet de lucarne avant travaux — peinture extérieure, peintre à Bourges (18)",
+    afterAlt: "Façade et volet repeints en blanc — peinture extérieure à Bourges (18)",
   },
 ];
 
