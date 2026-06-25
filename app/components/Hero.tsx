@@ -1,11 +1,11 @@
 import { site, has } from "../lib/site";
+import { asset } from "../lib/asset";
 import { BookingButton } from "./BookingButton";
 import { GoogleRating } from "./GoogleRating";
 import { CheckIcon } from "./icons";
 
-// Full-screen hero. Uses a layered charcoal + sage gradient as the signature
-// until the client provides a hero photo (drop it at /public/images/hero.jpg
-// and uncomment the <img> layer below + set objectPosition).
+// Full-screen hero: signature photo (bright interior) behind a charcoal scrim
+// so the white text stays readable, with a subtle sage glow.
 export function Hero() {
   const valueProps = [
     "Devis gratuit",
@@ -20,22 +20,21 @@ export function Hero() {
       id="top"
       className="relative isolate overflow-hidden bg-ink text-bg"
     >
-      {/* Signature background — replace with a real photo when available:
-          <img src={asset("/images/hero.jpg")} alt="..." className="absolute inset-0 -z-10 h-full w-full object-cover opacity-40" /> */}
+      {/* Signature photo */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={asset("/images/hero.jpg")}
+        alt="Intérieur peint par AES Services — mur vert sauge, finitions soignées à Bourges"
+        className="absolute inset-0 -z-20 h-full w-full object-cover"
+        fetchPriority="high"
+      />
+      {/* Charcoal scrim (stronger on the left where the text sits) + sage glow */}
       <div
         aria-hidden
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(120% 90% at 80% 0%, color-mix(in srgb, var(--color-sage) 30%, transparent) 0%, transparent 55%), linear-gradient(160deg, var(--color-ink) 0%, color-mix(in srgb, var(--color-ink) 70%, black) 100%)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0 -z-10 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(135deg, #fff 0 2px, transparent 2px 22px)",
+            "radial-gradient(110% 80% at 85% 0%, color-mix(in srgb, var(--color-sage) 22%, transparent) 0%, transparent 55%), linear-gradient(95deg, color-mix(in srgb, var(--color-ink) 94%, transparent) 0%, color-mix(in srgb, var(--color-ink) 80%, transparent) 45%, color-mix(in srgb, var(--color-ink) 45%, transparent) 100%)",
         }}
       />
 

@@ -1,4 +1,5 @@
 import { site, has } from "../lib/site";
+import { asset } from "../lib/asset";
 import { BookingButton } from "./BookingButton";
 import { CheckIcon } from "./icons";
 
@@ -15,11 +16,14 @@ export function About() {
     <section id="a-propos" className="bg-bg-soft py-20">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2">
         {/* Portrait */}
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl bg-gradient-to-br from-ink to-[color-mix(in_srgb,var(--color-ink)_75%,black)] lg:max-w-md">
-          {/* Replace with: <img src={asset("/images/portrait.jpg")} alt={`${site.artisanName}, ${site.trade} à ${site.city}`} className="h-full w-full object-cover" /> */}
-          <div className="flex h-full w-full items-center justify-center text-bg/40">
-            <span className="text-sm">Portrait de l&apos;artisan</span>
-          </div>
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl bg-bg-soft lg:max-w-md">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={asset("/images/portrait.jpg")}
+            alt={`${has(site.artisanName) ? site.artisanName + ", " : ""}peintre en bâtiment AES Services à ${site.city}`}
+            className="h-full w-full object-cover"
+            loading="lazy"
+          />
         </div>
 
         <div>
