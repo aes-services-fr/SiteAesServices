@@ -46,7 +46,7 @@ export const site = {
   name: "AES Services",
   legalName: TODO, // raison sociale exacte (à confirmer)
   trade: "Peintre en bâtiment",
-  artisanName: TODO, // prénom + nom de l'artisan principal (à confirmer)
+  artisanName: "Sébastien Joaquim", // artisan principal
   city: "Bourges",
   radiusKm: "60",
   experienceYears: "2", // affiché « plus de 2 ans »
