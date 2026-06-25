@@ -32,16 +32,23 @@ export default function MentionsLegales() {
 
       <section className="mt-8 space-y-2 text-sm leading-relaxed">
         <h2 className="text-xl font-semibold text-ink">Éditeur du site</h2>
-        <Field label="Dénomination" value={site.legalName} />
+        <Field label="Dénomination" value={`${site.legalName} — ${site.name}`} />
+        <Field label="Forme juridique" value={site.legal.forme} />
         <Field label="Activité" value={site.trade} />
         <Field
           label="Adresse"
           value={`${site.address.street}, ${site.address.postalCode} ${site.address.city}`}
         />
+        <Field label="SIREN" value={site.legal.siren} />
+        <Field label="SIRET (siège)" value={site.legal.siret} />
+        <Field label="N° TVA intracommunautaire" value={site.legal.tva} />
         <Field label="Téléphone" value={site.phoneDisplay} />
         {site.email && !site.email.startsWith("<") && (
           <Field label="Email" value={site.email} />
         )}
+        <p className="pt-1 text-xs text-muted">
+          Directeur de la publication : {site.legalName}.
+        </p>
       </section>
 
       <section className="mt-8 space-y-2 text-sm leading-relaxed">

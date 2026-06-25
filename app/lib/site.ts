@@ -44,8 +44,14 @@ export const has = (v: string): boolean => !isTodo(v);
 export const site = {
   // --- Identité --------------------------------------------------------------
   name: "AES Services",
-  legalName: TODO, // raison sociale exacte (à confirmer)
+  legalName: "Sébastien Joaquim", // entrepreneur individuel exploitant sous AES Services
   trade: "Peintre en bâtiment",
+  legal: {
+    siren: "948 744 875",
+    siret: "948 744 875 00030",
+    forme: "Entrepreneur individuel (micro-entreprise)",
+    tva: "FR12 948 744 875",
+  },
   artisanName: "Sébastien Joaquim", // artisan principal
   city: "Bourges",
   radiusKm: "60",
