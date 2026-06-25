@@ -188,9 +188,53 @@ export const galleryCategories: GalleryCategory[] = [
   "Extérieur",
 ];
 
-// Placeholder gallery — replaced once client photos are provided.
-// Images attendues sous /public/images/realisations/*.
-export const gallery: GalleryImage[] = [];
+// Curated gallery (client chantiers). Files under /public/images/realisations/.
+export const gallery: GalleryImage[] = [
+  { src: "/images/realisations/r14.jpg", category: "Intérieur", alt: "Grande pièce de vie repeinte en blanc avec poêle à granulés — peinture intérieure, peintre à Bourges (18)" },
+  { src: "/images/realisations/r27.jpg", category: "Intérieur", alt: "Salon lumineux ouvert sur le jardin, peinture blanche — peintre en bâtiment à Bourges" },
+  { src: "/images/realisations/r28.jpg", category: "Intérieur", alt: "Séjour et cage d'escalier aux murs gris — peinture intérieure à Bourges (18)" },
+  { src: "/images/realisations/r19.jpg", category: "Intérieur", alt: "Montée d'escalier aux murs gris perle — peinture intérieure, peintre Bourges" },
+  { src: "/images/realisations/r31.jpg", category: "Intérieur", alt: "Séjour gris clair et menuiseries soignées — peintre en bâtiment à Bourges" },
+  { src: "/images/realisations/r23.jpg", category: "Intérieur", alt: "Pièce de vie avec baie vitrée repeinte — peinture intérieure à Bourges (18)" },
+  { src: "/images/realisations/r20.jpg", category: "Décoration", alt: "Mur d'accent taupe et verrière atelier — décoration et mise en couleur, Bourges" },
+  { src: "/images/realisations/r02.jpg", category: "Décoration", alt: "Dressing sous escalier peint en bleu canard — mise en couleur, peintre Bourges" },
+  { src: "/images/realisations/r33.jpg", category: "Décoration", alt: "Séjour aux murs taupe avec entrée noire — peinture décorative à Bourges (18)" },
+  { src: "/images/realisations/r13.jpg", category: "Décoration", alt: "Pièce de vie gris perle avec verrière — peinture décorative à Bourges" },
+  { src: "/images/realisations/r22.jpg", category: "Extérieur", alt: "Façade et volet de lucarne repeints — peinture extérieure, peintre à Bourges (18)" },
+];
+
+export type BeforeAfter = {
+  title: string;
+  before: string;
+  after: string;
+  beforeAlt: string;
+  afterAlt: string;
+};
+
+// Same-room before/after pairs.
+export const beforeAfter: BeforeAfter[] = [
+  {
+    title: "Dressing sous escalier",
+    before: "/images/realisations/r30.jpg",
+    after: "/images/realisations/r02.jpg",
+    beforeAlt: "Dressing en cours de peinture, mur bleu canard et masquage — chantier à Bourges",
+    afterAlt: "Dressing fini en bleu canard avec rangements blancs — peintre à Bourges (18)",
+  },
+  {
+    title: "Séjour & verrière",
+    before: "/images/realisations/r21.jpg",
+    after: "/images/realisations/r20.jpg",
+    beforeAlt: "Séjour en cours de mise en peinture, sol protégé et pots de peinture — chantier Bourges",
+    afterAlt: "Séjour fini, mur taupe et verrière atelier — peinture décorative à Bourges (18)",
+  },
+  {
+    title: "Salle d'eau",
+    before: "/images/realisations/r25.jpg",
+    after: "/images/realisations/r32.jpg",
+    beforeAlt: "Salle d'eau en préparation, murs ratissés et poncés — chantier à Bourges",
+    afterAlt: "Salle d'eau finie, faïence et sol béton ciré — peintre en bâtiment à Bourges (18)",
+  },
+];
 
 // --- FAQ ---------------------------------------------------------------------
 export const faqs: Faq[] = [

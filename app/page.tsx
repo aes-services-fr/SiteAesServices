@@ -3,6 +3,7 @@ import { Hero } from "./components/Hero";
 import { TrustStrip } from "./components/TrustStrip";
 import { Services } from "./components/Services";
 import { Gallery } from "./components/Gallery";
+import { BeforeAfter } from "./components/BeforeAfter";
 import { Method } from "./components/Method";
 import { About } from "./components/About";
 import { Reviews } from "./components/Reviews";
@@ -25,6 +26,7 @@ export default function Home() {
         <TrustStrip />
         <Services />
         <Gallery />
+        <BeforeAfter />
         <Method />
         <About />
         <Reviews />
