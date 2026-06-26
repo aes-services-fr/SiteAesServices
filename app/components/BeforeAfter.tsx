@@ -33,7 +33,7 @@ export function BeforeAfter() {
                   src={asset(pair.before)}
                   alt={pair.beforeAlt}
                   loading="lazy"
-                  className="aspect-[3/4] h-full w-full object-cover"
+                  className="aspect-[4/3] h-full w-full object-cover"
                 />
                 <span className="absolute left-2 top-2 rounded-full bg-ink/80 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-bg">
                   Avant
@@ -45,7 +45,7 @@ export function BeforeAfter() {
                   src={asset(pair.after)}
                   alt={pair.afterAlt}
                   loading="lazy"
-                  className="aspect-[3/4] h-full w-full object-cover"
+                  className="aspect-[4/3] h-full w-full object-cover"
                 />
                 <span className="absolute right-2 top-2 rounded-full bg-cta px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-ink">
                   Après

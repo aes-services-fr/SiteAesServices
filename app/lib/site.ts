@@ -214,6 +214,27 @@ export type BeforeAfter = {
 // Same-room before/after pairs (confirmed by the client).
 export const beforeAfter: BeforeAfter[] = [
   {
+    title: "Séjour & escalier",
+    before: "/images/realisations/r11.jpg",
+    after: "/images/realisations/r28.jpg",
+    beforeAlt: "Séjour et cage d'escalier en cours de peinture, sol protégé — chantier à Bourges",
+    afterAlt: "Séjour et escalier finis, murs gris et parquet — peintre en bâtiment à Bourges (18)",
+  },
+  {
+    title: "Montée d'escalier",
+    before: "/images/realisations/r07.jpg",
+    after: "/images/realisations/r19.jpg",
+    beforeAlt: "Montée d'escalier avant finition, sol protégé — chantier de peinture à Bourges",
+    afterAlt: "Montée d'escalier finie, murs gris perle — peinture intérieure à Bourges (18)",
+  },
+  {
+    title: "Entrée & dégagement",
+    before: "/images/realisations/r26.jpg",
+    after: "/images/realisations/r29.jpg",
+    beforeAlt: "Entrée en préparation, sol protégé avant mise en peinture — chantier à Bourges",
+    afterAlt: "Entrée et dégagement finis, murs beige — peintre en bâtiment à Bourges (18)",
+  },
+  {
     title: "Façade & volet",
     before: "/images/realisations/r18.jpg",
     after: "/images/realisations/r22.jpg",
