@@ -89,8 +89,8 @@ export const site = {
     // (repli sur les valeurs de google-rating.json si pas de clé API).
     rating: googleRating.rating,
     reviewCount: googleRating.reviewCount,
-    cid: "", // CID Google Business Profile (à fournir)
-    reviewUrl: "https://share.google/EeVtthL3hxQtL3Jhk",
+    cid: "16457289082035960368", // CID Google Business Profile
+    reviewUrl: "https://www.google.com/maps?cid=16457289082035960368",
     mapEmbedQuery: "AES Services peintre La Chapelle-Saint-Ursin Bourges",
   },
 
