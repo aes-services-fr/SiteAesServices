@@ -6,6 +6,9 @@ on:
       - main
       - claude/laughing-ritchie-btmkt0
   workflow_dispatch:
+  # Daily rebuild so the Google rating/review count stays up to date.
+  schedule:
+    - cron: "0 6 * * *"
 
 permissions:
   contents: read
@@ -37,6 +40,9 @@ jobs:
         env:
           GITHUB_PAGES: "true"
           NODE_ENV: production
+          # Optional: set these repo secrets to auto-refresh the Google rating.
+          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+          GOOGLE_PLACE_ID: ${{ secrets.GOOGLE_PLACE_ID }}
         run: npm run build
 
       - name: Disable Jekyll processing

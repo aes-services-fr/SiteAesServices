@@ -3,19 +3,23 @@
 // Values marked TODO must be confirmed with the client before going live.
 // ---------------------------------------------------------------------------
 
+import googleRating from "./google-rating.json";
+
 export type Service = {
   id: string;
   title: string;
   description: string;
   price: string; // "à partir de 25€/m²", "Sur devis", "Forfait 350€"...
-  category: GalleryCategory;
+  category: string;
 };
 
+// Gallery filters by room type.
 export type GalleryCategory =
-  | "Intérieur"
-  | "Extérieur"
-  | "Façade"
-  | "Décoration";
+  | "Salon"
+  | "Cuisine"
+  | "Chambre"
+  | "Salle d'eau"
+  | "Extérieur";
 
 export type GalleryImage = {
   src: string;
@@ -33,6 +37,8 @@ export type Review = {
   rating: number;
   text: string;
 };
+
+
 
 export const TODO = "<TODO>";
 
@@ -79,8 +85,10 @@ export const site = {
   // --- Avis Google -----------------------------------------------------------
   google: {
     hasReviews: true,
-    rating: "5,0",
-    reviewCount: "16",
+    // Rafraîchis automatiquement au build via scripts/fetch-google-rating.mjs
+    // (repli sur les valeurs de google-rating.json si pas de clé API).
+    rating: googleRating.rating,
+    reviewCount: googleRating.reviewCount,
     cid: "", // CID Google Business Profile (à fournir)
     reviewUrl: "https://share.google/EeVtthL3hxQtL3Jhk",
     mapEmbedQuery: "AES Services peintre La Chapelle-Saint-Ursin Bourges",
@@ -181,27 +189,34 @@ export const services: Service[] = [
 ];
 
 export const galleryCategories: GalleryCategory[] = [
-  "Intérieur",
-  "Décoration",
+  "Salon",
+  "Cuisine",
+  "Chambre",
+  "Salle d'eau",
   "Extérieur",
 ];
 
 // Curated gallery (client chantiers). Files under /public/images/realisations/.
 export const gallery: GalleryImage[] = [
-  { src: "/images/realisations/r14.jpg", category: "Intérieur", alt: "Grande pièce de vie repeinte en blanc avec poêle à granulés — peinture intérieure, peintre à Bourges (18)" },
-  { src: "/images/realisations/r27.jpg", category: "Intérieur", alt: "Salon lumineux ouvert sur le jardin, peinture blanche — peintre en bâtiment à Bourges" },
-  { src: "/images/realisations/r28.jpg", category: "Intérieur", alt: "Séjour et cage d'escalier aux murs gris — peinture intérieure à Bourges (18)" },
-  { src: "/images/realisations/r19.jpg", category: "Intérieur", alt: "Montée d'escalier aux murs gris perle — peinture intérieure, peintre Bourges" },
-  { src: "/images/realisations/r31.jpg", category: "Intérieur", alt: "Séjour gris clair et menuiseries soignées — peintre en bâtiment à Bourges" },
-  { src: "/images/realisations/r23.jpg", category: "Intérieur", alt: "Pièce de vie avec baie vitrée repeinte — peinture intérieure à Bourges (18)" },
-  { src: "/images/realisations/r20.jpg", category: "Décoration", alt: "Mur d'accent taupe et verrière atelier — décoration et mise en couleur, Bourges" },
-  { src: "/images/realisations/r02.jpg", category: "Décoration", alt: "Dressing sous escalier peint en bleu canard — mise en couleur, peintre Bourges" },
-  { src: "/images/realisations/r33.jpg", category: "Décoration", alt: "Séjour aux murs taupe avec entrée noire — peinture décorative à Bourges (18)" },
-  { src: "/images/realisations/r13.jpg", category: "Décoration", alt: "Pièce de vie gris perle avec verrière — peinture décorative à Bourges" },
-  { src: "/images/realisations/r44.jpg", category: "Intérieur", alt: "Pièce de vie ouverte sur cuisine, mur d'accent terracotta — peinture intérieure et décoration à Bourges (18)" },
-  { src: "/images/realisations/r42.jpg", category: "Décoration", alt: "Cuisine aux meubles vert sauge et mur terracotta — mise en couleur, peintre à Bourges (18)" },
-  { src: "/images/realisations/r36.jpg", category: "Décoration", alt: "Chambre repeinte en rose poudré — peinture décorative, peintre à Bourges (18)" },
-  { src: "/images/realisations/r22.jpg", category: "Extérieur", alt: "Façade et volet de lucarne repeints — peinture extérieure, peintre à Bourges (18)" },
+  // Salon / séjour
+  { src: "/images/realisations/r14.jpg", category: "Salon", alt: "Grande pièce de vie repeinte en blanc avec poêle à granulés — peintre à Bourges (18)" },
+  { src: "/images/realisations/r27.jpg", category: "Salon", alt: "Salon lumineux ouvert sur le jardin — peinture intérieure à Bourges" },
+  { src: "/images/realisations/r40.jpg", category: "Salon", alt: "Salon de caractère rénové en blanc, rosace de plafond préservée — peintre à Bourges (18)" },
+  { src: "/images/realisations/r33.jpg", category: "Salon", alt: "Séjour aux murs taupe avec entrée noire — peinture décorative à Bourges" },
+  { src: "/images/realisations/r20.jpg", category: "Salon", alt: "Séjour avec mur d'accent taupe et verrière atelier — mise en couleur à Bourges (18)" },
+  { src: "/images/realisations/r13.jpg", category: "Salon", alt: "Séjour gris perle avec verrière — peinture intérieure à Bourges" },
+  // Cuisine
+  { src: "/images/realisations/r44.jpg", category: "Cuisine", alt: "Pièce de vie ouverte sur cuisine, mur d'accent terracotta — peintre à Bourges (18)" },
+  { src: "/images/realisations/r42.jpg", category: "Cuisine", alt: "Cuisine aux meubles vert sauge et mur terracotta — mise en couleur à Bourges" },
+  { src: "/images/realisations/r45.jpg", category: "Cuisine", alt: "Cuisine ouverte avec mur terracotta — peinture et décoration à Bourges (18)" },
+  // Chambre
+  { src: "/images/realisations/r36.jpg", category: "Chambre", alt: "Chambre repeinte en rose poudré — peinture décorative à Bourges (18)" },
+  { src: "/images/realisations/r37.jpg", category: "Chambre", alt: "Chambre rénovée en rose poudré, finitions soignées — peintre à Bourges" },
+  { src: "/images/realisations/r02.jpg", category: "Chambre", alt: "Dressing sous escalier peint en bleu canard — mise en couleur à Bourges (18)" },
+  // Salle d'eau
+  { src: "/images/realisations/r32.jpg", category: "Salle d'eau", alt: "Salle d'eau avec faïence et sol béton ciré — peintre en bâtiment à Bourges (18)" },
+  // Extérieur
+  { src: "/images/realisations/r22.jpg", category: "Extérieur", alt: "Façade et volet de lucarne repeints — peinture extérieure à Bourges (18)" },
 ];
 
 export type BeforeAfter = {

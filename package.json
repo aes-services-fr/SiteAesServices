@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/optimize-images.mjs",
+    "prebuild": "node scripts/fetch-google-rating.mjs && node scripts/optimize-images.mjs",
+    "refresh:rating": "node scripts/fetch-google-rating.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
