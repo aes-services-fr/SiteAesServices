@@ -10,7 +10,8 @@ export function GoogleRating({
   className?: string;
   variant?: "light" | "dark";
 }) {
-  const { hasReviews, rating, reviewCount, reviewUrl } = site.google;
+  const { hasReviews, rating, reviewCount, reviewUrl, showReviewCount } =
+    site.google;
   if (!hasReviews) return null;
 
   const numeric = Number(String(rating).replace(",", ".")) || 5;
@@ -29,7 +30,9 @@ export function GoogleRating({
         ))}
       </span>
       <span className={`text-sm font-semibold ${text}`}>{rating}/5</span>
-      <span className={`text-sm ${sub}`}>· {reviewCount} avis Google</span>
+      <span className={`text-sm ${sub}`}>
+        {showReviewCount ? `· ${reviewCount} avis Google` : "sur Google"}
+      </span>
     </span>
   );
 
@@ -40,7 +43,7 @@ export function GoogleRating({
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-        aria-label={`Note ${rating} sur 5 sur Google, ${reviewCount} avis`}
+        aria-label={`Note ${rating} sur 5 sur Google`}
       >
         {inner}
       </a>

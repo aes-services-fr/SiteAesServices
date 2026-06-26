@@ -1,46 +1,51 @@
-// Refreshes the Google rating + review count at build time using the
-// Places API (New). No-ops (keeps the committed JSON) when the API key or
-// place id are not provided, so local builds and forks still work.
+// Refreshes the Google rating + review count at build time using the Places
+// API (New) **Text Search** — searching by business name finds the actual
+// Google Business Profile (with its rating), even for service-area businesses
+// whose Place ID otherwise resolves to a plain address.
 //
-// Required env (set as GitHub Actions secrets):
-//   GOOGLE_MAPS_API_KEY  — API key with "Places API (New)" enabled
-//   GOOGLE_PLACE_ID      — the Place ID of the Google Business Profile
+// No-ops (keeps the committed JSON) when the API key is missing, so local
+// builds and forks still work.
+//
+// Required env (GitHub Actions secret):
+//   GOOGLE_MAPS_API_KEY  — key with "Places API (New)" enabled
+// Optional:
+//   GOOGLE_PLACE_QUERY   — override the search query
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
 const OUT = path.join(process.cwd(), "app", "lib", "google-rating.json");
-
-// Place ID is public (appears in Google Maps URLs) so it can live in code.
-// Overridable via GOOGLE_PLACE_ID if it ever changes.
-const PLACE = process.env.GOOGLE_PLACE_ID || "ChIJx9_eNMSU-kcRCOU0BBYYZ48";
-// The API key IS sensitive — provided only via the GOOGLE_MAPS_API_KEY secret.
 const KEY = process.env.GOOGLE_MAPS_API_KEY;
+const QUERY =
+  process.env.GOOGLE_PLACE_QUERY || "AES Services peintre La Chapelle-Saint-Ursin";
 
 async function main() {
-  if (!KEY || !PLACE) {
+  if (!KEY) {
     console.log("[google-rating] no API key — keeping current values.");
     return;
   }
 
-  const res = await fetch(`https://places.googleapis.com/v1/places/${PLACE}`, {
+  const res = await fetch("https://places.googleapis.com/v1/places:searchText", {
+    method: "POST",
     headers: {
+      "Content-Type": "application/json",
       "X-Goog-Api-Key": KEY,
-      "X-Goog-FieldMask": "displayName,rating,userRatingCount",
+      "X-Goog-FieldMask": "places.displayName,places.rating,places.userRatingCount",
     },
+    body: JSON.stringify({ textQuery: QUERY, languageCode: "fr", regionCode: "FR" }),
   });
 
   const raw = await res.text();
-  // Temporary diagnostic file (public) — remove once the rating works.
+  // TEMP diagnostic (public) — remove once confirmed working.
   try {
     await fs.writeFile(
       path.join(process.cwd(), "public", "_rating-debug.json"),
-      JSON.stringify({ status: res.status, body: raw.slice(0, 1000) }, null, 2),
+      JSON.stringify({ status: res.status, body: raw.slice(0, 1200) }, null, 2),
     );
   } catch {
     /* ignore */
   }
   if (!res.ok) {
-    console.warn(`[google-rating] API ${res.status} — body: ${raw.slice(0, 400)}`);
+    console.warn(`[google-rating] API ${res.status} — body: ${raw.slice(0, 300)}`);
     return;
   }
 
@@ -48,36 +53,38 @@ async function main() {
   try {
     data = JSON.parse(raw);
   } catch {
-    console.warn(`[google-rating] non-JSON response: ${raw.slice(0, 200)}`);
+    console.warn(`[google-rating] non-JSON: ${raw.slice(0, 200)}`);
     return;
   }
-  // Accept both new (rating/userRatingCount) and legacy (result.rating/
-  // user_ratings_total) shapes; coerce numeric strings just in case.
-  const ratingNum = Number(data.rating ?? data.result?.rating);
-  const countNum = Number(
-    data.userRatingCount ?? data.user_ratings_total ?? data.result?.user_ratings_total,
+
+  const places = Array.isArray(data.places) ? data.places : [];
+  // First result that actually carries a rating (skips bare addresses).
+  const place = places.find(
+    (p) => typeof p.rating === "number" && typeof p.userRatingCount === "number",
   );
-  if (!Number.isFinite(ratingNum) || !Number.isFinite(countNum)) {
+  if (!place) {
     console.warn(
-      `[google-rating] unexpected response — body: ${raw.slice(0, 400)}`,
+      `[google-rating] no rated place for "${QUERY}" — body: ${raw.slice(0, 300)}`,
     );
     return;
   }
-  data = { rating: ratingNum, userRatingCount: countNum };
 
-  // French formatting: "5,0"
-  const rating = data.rating.toFixed(1).replace(".", ",");
-  const reviewCount = String(data.userRatingCount);
-  const json = {
-    rating,
-    reviewCount,
-    updatedAt: new Date().toISOString().slice(0, 10),
-  };
-  await fs.writeFile(OUT, JSON.stringify(json, null, 2) + "\n");
-  console.log(`[google-rating] updated: ${rating}/5 · ${reviewCount} avis`);
+  const rating = place.rating.toFixed(1).replace(".", ",");
+  const reviewCount = String(place.userRatingCount);
+  await fs.writeFile(
+    OUT,
+    JSON.stringify(
+      { rating, reviewCount, updatedAt: new Date().toISOString().slice(0, 10) },
+      null,
+      2,
+    ) + "\n",
+  );
+  console.log(
+    `[google-rating] updated: ${rating}/5 · ${reviewCount} avis (${place.displayName?.text ?? "?"})`,
+  );
 }
 
 main().catch((err) => {
   console.warn("[google-rating] error:", err.message, "— keeping current values.");
-  process.exit(0); // never block the build
+  process.exit(0);
 });

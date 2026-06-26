@@ -5,6 +5,7 @@
 
 import googleRating from "./google-rating.json";
 
+
 export type Service = {
   id: string;
   title: string;
@@ -85,8 +86,9 @@ export const site = {
   // --- Avis Google -----------------------------------------------------------
   google: {
     hasReviews: true,
-    // Rafraîchis automatiquement au build via scripts/fetch-google-rating.mjs
-    // (repli sur les valeurs de google-rating.json si pas de clé API).
+    showReviewCount: true,
+    // Rafraîchis automatiquement au build (recherche par nom via Places API),
+    // repli sur google-rating.json si la clé API n'est pas configurée.
     rating: googleRating.rating,
     reviewCount: googleRating.reviewCount,
     cid: "16457289082035960368", // CID Google Business Profile
