@@ -51,7 +51,7 @@ export function Services() {
           return (
             <article
               key={s.id}
-              className="flex flex-col rounded-2xl border border-line bg-white/60 p-4 sm:p-6"
+              className="flex flex-col rounded-2xl border border-line bg-white/60 p-4 transition-all duration-200 hover:-translate-y-1 hover:border-accent/50 hover:shadow-md sm:p-6"
             >
               <span className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-accent/12 text-accent">
                 <Icon className="text-xl" />
@@ -94,7 +94,7 @@ export function Services() {
         <p className="font-serif text-xl font-semibold">
           Un projet en tête ? Recevez votre devis gratuit.
         </p>
-        <BookingButton source="services_top" action="form" variant="primary">
+        <BookingButton source="services_top" action="form" variant="primary" withArrow>
           Demander un devis
         </BookingButton>
       </div>

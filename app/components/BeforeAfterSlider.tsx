@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { animate, useInView, useReducedMotion } from "framer-motion";
 import { asset } from "../lib/asset";
 
 // Interactive before/after "curtain" slider: drag the handle to reveal the
@@ -19,9 +20,27 @@ export function BeforeAfterSlider({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
+  const touched = useRef(false);
   const [pos, setPos] = useState(50);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const reduce = useReducedMotion();
+
+  // One-time hint: nudge the handle so visitors see it's draggable.
+  useEffect(() => {
+    if (!inView || reduce || touched.current) return;
+    const controls = animate(50, [50, 72, 32, 50], {
+      duration: 1.7,
+      delay: 0.4,
+      ease: "easeInOut",
+      onUpdate: (v) => {
+        if (!touched.current) setPos(v);
+      },
+    });
+    return () => controls.stop();
+  }, [inView, reduce]);
 
   const update = useCallback((clientX: number) => {
+    touched.current = true;
     const el = ref.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();

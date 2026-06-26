@@ -27,7 +27,7 @@ export function Reviews() {
             {reviews.map((r, i) => (
               <blockquote
                 key={i}
-                className="rounded-2xl border border-line bg-bg p-5"
+                className="rounded-2xl border border-line bg-bg p-5 transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
               >
                 <div className="flex gap-0.5 text-[#f5a623]">
                   {Array.from({ length: r.rating }).map((_, j) => (

@@ -4,6 +4,7 @@ import { site } from "./lib/site";
 import { asset } from "./lib/asset";
 import { baseUrl } from "./lib/seo";
 import { Analytics } from "./components/Analytics";
+import { ScrollProgress } from "./components/ScrollProgress";
 
 const title = `${site.name} — ${site.trade}${
   site.city && !site.city.startsWith("<") ? ` à ${site.city}` : ""
@@ -67,6 +68,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body>
+        <ScrollProgress />
         {children}
         <Analytics />
       </body>

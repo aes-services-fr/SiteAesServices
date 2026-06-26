@@ -66,7 +66,7 @@ export function About() {
           )}
 
           <div className="mt-8">
-            <BookingButton source="about" action="form" variant="primary">
+            <BookingButton source="about" action="form" variant="primary" withArrow>
               Discuter de mon projet
             </BookingButton>
           </div>

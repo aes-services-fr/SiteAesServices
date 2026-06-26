@@ -44,14 +44,18 @@ export function Header() {
           : "border-b border-transparent bg-bg/0"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <div
+        className={`mx-auto flex max-w-6xl items-center justify-between px-4 transition-all duration-300 sm:px-6 ${
+          scrolled ? "h-14" : "h-16"
+        }`}
+      >
         <a href="#top" aria-label={`${site.name} — accueil`} className="flex items-center">
           {/* Dark logo on the white scrolled header; light logo over the hero. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={asset(scrolled ? "/images/logo.png" : "/images/logo-light.png")}
             alt={`${site.name} — peintre en bâtiment à ${site.city}`}
-            className="h-9 w-auto"
+            className={`w-auto transition-all duration-300 ${scrolled ? "h-8" : "h-9"}`}
           />
         </a>
 
@@ -76,7 +80,7 @@ export function Header() {
             <PhoneIcon className="text-base text-accent" />
             {site.phoneDisplay}
           </a>
-          <BookingButton source="header" action="form">
+          <BookingButton source="header" action="form" withArrow>
             Demander un devis
           </BookingButton>
         </div>

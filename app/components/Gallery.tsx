@@ -78,14 +78,14 @@ export function Gallery() {
               ? items.map((img, i) => (
                   <figure
                     key={`${img.src}-${i}`}
-                    className="relative aspect-[4/3] min-w-0 flex-[0_0_85%] overflow-hidden rounded-2xl sm:flex-[0_0_45%] lg:flex-[0_0_31%]"
+                    className="group relative aspect-[4/3] min-w-0 flex-[0_0_85%] overflow-hidden rounded-2xl sm:flex-[0_0_45%] lg:flex-[0_0_31%]"
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={asset(img.src)}
                       alt={img.alt}
                       loading="lazy"
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-ink/70 to-transparent p-3 text-xs font-medium text-bg">
                       {img.category}

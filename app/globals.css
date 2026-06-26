@@ -60,6 +60,20 @@ h1, h2, h3, h4 {
   }
 }
 
+/* Ken Burns: very slow zoom/pan on the hero photo. */
+@keyframes kenburns {
+  from {
+    transform: scale(1.02) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.12) translate3d(-1.5%, -1.5%, 0);
+  }
+}
+.animate-kenburns {
+  animation: kenburns 22s ease-out forwards;
+  transform-origin: 70% 30%;
+}
+
 /* Reusable utility for the FAQ accordion: collapse via CSS grid so all
    answers stay in the initial DOM (good for SEO + no AnimatePresence). */
 .faq-grid {
