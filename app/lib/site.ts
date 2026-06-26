@@ -117,7 +117,7 @@ export const site = {
   // --- Formulaire de devis ---------------------------------------------------
   // Clé d'accès Web3Forms (publique). Vide => repli sur mailto.
   // À générer gratuitement sur https://web3forms.com (reçu par email).
-  formAccessKey: "",
+  formAccessKey: "b3ab4d53-8446-45d7-8aa3-936a81b38ece",
 
   // --- Analytics -------------------------------------------------------------
   gaMeasurementId: "", // "G-XXXXXXXXXX" si fourni
