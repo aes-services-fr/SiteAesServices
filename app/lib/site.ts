@@ -322,4 +322,14 @@ export const reviews: Review[] = [
     rating: 5,
     text: "Travail impeccable du début à la fin ! Sébastien a enduit et rattrapé tous les murs du salon, de la salle à manger et de la chambre, et le résultat est vraiment parfait : des murs lisses, propres, avec des finitions soignées. Artisan sérieux, ponctuel, très professionnel et à l'écoute. Chantier laissé propre après son passage. Je recommande les yeux fermés !",
   },
+  {
+    author: "Emma Nicaud",
+    rating: 5,
+    text: "Très satisfaite de l'entreprise AES Services ! Travail impeccable pour la peinture et le parquet, finitions soignées et chantier propre. Sébastien est au top : professionnel, à l'écoute et de très bon conseil. Je recommande les yeux fermés !",
+  },
+  {
+    author: "Alice Millet",
+    rating: 5,
+    text: "Nous avons fait appel à M. Joaquim pour la chambre de notre futur bébé et le rendu est nickel. Travail rapide avec de belles finitions. Je recommande.",
+  },
 ];
