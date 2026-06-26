@@ -94,8 +94,8 @@ export const site = {
     mapEmbedQuery: "AES Services peintre La Chapelle-Saint-Ursin Bourges",
   },
 
-  // --- Certifications --------------------------------------------------------
-  certifications: [] as string[], // ex ["RGE", "Qualibat 6111"] (à confirmer)
+  // --- Certifications / assurances -------------------------------------------
+  certifications: [] as string[], // aucune certification/assurance à afficher pour le moment
 
   // --- Réseaux sociaux -------------------------------------------------------
   social: {
@@ -113,6 +113,11 @@ export const site = {
   // --- Domaine / SEO ---------------------------------------------------------
   // Servi sur GitHub Pages pour le moment (basePath /siteaesservices).
   domain: TODO, // ex "https://www.aes-services.fr" quand le domaine sera branché
+
+  // --- Formulaire de devis ---------------------------------------------------
+  // Clé d'accès Web3Forms (publique). Vide => repli sur mailto.
+  // À générer gratuitement sur https://web3forms.com (reçu par email).
+  formAccessKey: "",
 
   // --- Analytics -------------------------------------------------------------
   gaMeasurementId: "", // "G-XXXXXXXXXX" si fourni
@@ -294,4 +299,25 @@ export const faqs: Faq[] = [
   },
 ];
 
-export const reviews: Review[] = [];
+export const reviews: Review[] = [
+  {
+    author: "Laure Mourlin",
+    rating: 5,
+    text: "Travail d'une qualité irréprochable ! J'ai fait appel à Sébastien pour un ratissage complet de mon appartement. Résultat, un chantier rapide, soigné, avec des finitions impeccables. Je recommande vivement.",
+  },
+  {
+    author: "Caroline Menge",
+    rating: 5,
+    text: "J'ai sollicité Sébastien pour refaire une cage d'escalier et l'étage sous combles. Un chantier impeccable, rapide et propre. Le résultat est parfait ! Sébastien a été ponctuel et fiable. Je recommande ses services.",
+  },
+  {
+    author: "Frédérique Allard",
+    rating: 5,
+    text: "Un travail impeccable. 65 m² de plafond à enduire et repeindre, pour un résultat magnifique. Sébastien travaille avec beaucoup de soin, il est méticuleux et attentif au moindre détail. Je recommande fortement ses prestations.",
+  },
+  {
+    author: "Lilou Pasquet",
+    rating: 5,
+    text: "Travail impeccable du début à la fin ! Sébastien a enduit et rattrapé tous les murs du salon, de la salle à manger et de la chambre, et le résultat est vraiment parfait : des murs lisses, propres, avec des finitions soignées. Artisan sérieux, ponctuel, très professionnel et à l'écoute. Chantier laissé propre après son passage. Je recommande les yeux fermés !",
+  },
+];

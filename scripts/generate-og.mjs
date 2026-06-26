@@ -49,11 +49,12 @@ function ogSvg() {
 
 function iconSvg(size) {
   const { bg, accent, ink } = BRAND;
-  const fs1 = Math.round(size * 0.5);
+  const fs1 = Math.round(size * 0.64);
+  const dot = Math.round(size * 0.085);
   return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
   <rect width="${size}" height="${size}" rx="${Math.round(size * 0.22)}" fill="${bg}"/>
-  <rect x="${Math.round(size * 0.18)}" y="${Math.round(size * 0.2)}" width="${Math.round(size * 0.16)}" height="${Math.round(size * 0.6)}" rx="${Math.round(size * 0.04)}" fill="${accent}"/>
-  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" dx="${Math.round(size * 0.12)}" font-family="Helvetica, Arial, sans-serif" font-size="${fs1}" font-weight="700" fill="${ink}">A</text>
+  <text x="${size * 0.46}" y="${size * 0.54}" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="${fs1}" font-weight="700" fill="${ink}">A</text>
+  <circle cx="${size * 0.72}" cy="${size * 0.66}" r="${dot}" fill="${accent}"/>
 </svg>`;
 }
 

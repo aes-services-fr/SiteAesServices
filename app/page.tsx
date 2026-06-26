@@ -15,6 +15,7 @@ import { Footer } from "./components/Footer";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { MobileStickyCta } from "./components/MobileStickyCta";
 import { JsonLd } from "./components/JsonLd";
+import { Reveal } from "./components/Reveal";
 
 export default function Home() {
   return (
@@ -24,16 +25,16 @@ export default function Home() {
       <main>
         <Hero />
         <TrustStrip />
-        <Services />
-        <Gallery />
-        <BeforeAfter />
-        <Method />
-        <About />
-        <Reviews />
-        <ServiceArea />
-        <Faq />
-        <FirstVisit />
-        <Contact />
+        <Reveal><Services /></Reveal>
+        <Reveal><Gallery /></Reveal>
+        <Reveal><BeforeAfter /></Reveal>
+        <Reveal><Method /></Reveal>
+        <Reveal><About /></Reveal>
+        <Reveal><Reviews /></Reveal>
+        <Reveal><ServiceArea /></Reveal>
+        <Reveal><Faq /></Reveal>
+        <Reveal><FirstVisit /></Reveal>
+        <Reveal><Contact /></Reveal>
       </main>
       <Footer />
       <WhatsAppButton />
