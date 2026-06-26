@@ -200,6 +200,9 @@ export const gallery: GalleryImage[] = [
   { src: "/images/realisations/r02.jpg", category: "Décoration", alt: "Dressing sous escalier peint en bleu canard — mise en couleur, peintre Bourges" },
   { src: "/images/realisations/r33.jpg", category: "Décoration", alt: "Séjour aux murs taupe avec entrée noire — peinture décorative à Bourges (18)" },
   { src: "/images/realisations/r13.jpg", category: "Décoration", alt: "Pièce de vie gris perle avec verrière — peinture décorative à Bourges" },
+  { src: "/images/realisations/r44.jpg", category: "Intérieur", alt: "Pièce de vie ouverte sur cuisine, mur d'accent terracotta — peinture intérieure et décoration à Bourges (18)" },
+  { src: "/images/realisations/r42.jpg", category: "Décoration", alt: "Cuisine aux meubles vert sauge et mur terracotta — mise en couleur, peintre à Bourges (18)" },
+  { src: "/images/realisations/r36.jpg", category: "Décoration", alt: "Chambre repeinte en rose poudré — peinture décorative, peintre à Bourges (18)" },
   { src: "/images/realisations/r22.jpg", category: "Extérieur", alt: "Façade et volet de lucarne repeints — peinture extérieure, peintre à Bourges (18)" },
 ];
 
@@ -213,6 +216,27 @@ export type BeforeAfter = {
 
 // Same-room before/after pairs (confirmed by the client).
 export const beforeAfter: BeforeAfter[] = [
+  {
+    title: "Chambre rénovée",
+    before: "/images/realisations/r34.jpg",
+    after: "/images/realisations/r37.jpg",
+    beforeAlt: "Chambre avant travaux, ancien papier peint décollé et murs abîmés — chantier de rénovation à Bourges",
+    afterAlt: "Chambre repeinte en rose poudré, finitions soignées — peintre en bâtiment à Bourges (18)",
+  },
+  {
+    title: "Pièce de caractère",
+    before: "/images/realisations/r39.jpg",
+    after: "/images/realisations/r40.jpg",
+    beforeAlt: "Grande pièce avant rénovation, enduits dégradés et rosace de plafond — chantier à Bourges",
+    afterAlt: "Grande pièce rénovée en blanc, rosace de plafond préservée — peintre à Bourges (18)",
+  },
+  {
+    title: "Pièce à moulures",
+    before: "/images/realisations/r38.jpg",
+    after: "/images/realisations/r41.jpg",
+    beforeAlt: "Pièce ancienne avant travaux, plâtres et moulures abîmés — chantier de rénovation à Bourges",
+    afterAlt: "Pièce rénovée en blanc, moulures et rosaces mises en valeur — peintre à Bourges (18)",
+  },
   {
     title: "Séjour & escalier",
     before: "/images/realisations/r11.jpg",
