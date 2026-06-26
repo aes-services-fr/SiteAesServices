@@ -216,13 +216,19 @@ export function ChatWidget() {
           setOpen((v) => !v);
           if (!open) trackEvent("chat_open", { source: "chat" });
         }}
-        className="fixed right-4 bottom-40 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-ink text-bg shadow-lg transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent md:right-6 md:bottom-24"
+        className="fixed left-4 bottom-24 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-ink text-bg shadow-lg transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent md:left-6 md:bottom-6"
       >
         {open ? (
           <CloseIcon className="text-2xl" />
         ) : (
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-            <path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.6-.8L3 21l1.9-5.4A8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z" />
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <circle cx="12" cy="3" r="1" />
+            <path d="M12 4v2.5" />
+            <rect x="4" y="6.5" width="16" height="12" rx="3.5" />
+            <path d="M2 12v3M22 12v3" />
+            <circle cx="9.3" cy="12.2" r="1.25" fill="currentColor" stroke="none" />
+            <circle cx="14.7" cy="12.2" r="1.25" fill="currentColor" stroke="none" />
+            <path d="M9.5 15.6h5" />
           </svg>
         )}
         <span className="absolute right-0 top-0 h-3 w-3 rounded-full bg-sage ring-2 ring-bg" />
@@ -235,7 +241,7 @@ export function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={reduce ? { opacity: 0 } : { opacity: 0, y: 20, scale: 0.98 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-3 bottom-3 z-50 flex max-h-[78vh] flex-col overflow-hidden rounded-2xl border border-line bg-bg shadow-2xl sm:inset-x-auto sm:right-6 sm:bottom-6 sm:w-[22rem]"
+            className="fixed inset-x-3 bottom-3 z-50 flex max-h-[78vh] flex-col overflow-hidden rounded-2xl border border-line bg-bg shadow-2xl sm:inset-x-auto sm:left-6 sm:bottom-6 sm:w-[22rem]"
           >
             {/* Header */}
             <div className="flex items-center justify-between bg-ink px-4 py-3 text-bg">
