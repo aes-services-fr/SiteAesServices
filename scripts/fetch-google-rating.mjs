@@ -29,16 +29,32 @@ async function main() {
     },
   });
 
+  const raw = await res.text();
   if (!res.ok) {
-    console.warn(`[google-rating] API ${res.status} — keeping current values.`);
+    console.warn(`[google-rating] API ${res.status} — body: ${raw.slice(0, 400)}`);
     return;
   }
 
-  const data = await res.json();
-  if (typeof data.rating !== "number" || typeof data.userRatingCount !== "number") {
-    console.warn("[google-rating] unexpected response — keeping current values.");
+  let data;
+  try {
+    data = JSON.parse(raw);
+  } catch {
+    console.warn(`[google-rating] non-JSON response: ${raw.slice(0, 200)}`);
     return;
   }
+  // Accept both new (rating/userRatingCount) and legacy (result.rating/
+  // user_ratings_total) shapes; coerce numeric strings just in case.
+  const ratingNum = Number(data.rating ?? data.result?.rating);
+  const countNum = Number(
+    data.userRatingCount ?? data.user_ratings_total ?? data.result?.user_ratings_total,
+  );
+  if (!Number.isFinite(ratingNum) || !Number.isFinite(countNum)) {
+    console.warn(
+      `[google-rating] unexpected response — body: ${raw.slice(0, 400)}`,
+    );
+    return;
+  }
+  data = { rating: ratingNum, userRatingCount: countNum };
 
   // French formatting: "5,0"
   const rating = data.rating.toFixed(1).replace(".", ",");
