@@ -3,11 +3,17 @@
 import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { beforeAfter } from "../lib/site";
-import { asset } from "../lib/asset";
+import { BeforeAfterSlider } from "./BeforeAfterSlider";
 
-// Before/after carousel. Each slide = one same-room pair (avant + après).
+// Before/after carousel. Each slide is an interactive "curtain" slider.
+// Carousel navigation is via the arrows only (watchDrag disabled) so the
+// horizontal drag is reserved for the comparison handle.
 export function BeforeAfter() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "center",
+    watchDrag: false,
+  });
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
@@ -24,8 +30,8 @@ export function BeforeAfter() {
             La transformation, en images
           </h2>
           <p className="mt-3 text-ink-soft">
-            Du support brut à la finition : faites glisser pour voir nos
-            chantiers menés du début à la fin.
+            Faites glisser le trait pour comparer l&apos;avant et l&apos;après de
+            nos chantiers.
           </p>
         </div>
         <div className="flex gap-2">
@@ -33,7 +39,7 @@ export function BeforeAfter() {
             type="button"
             onClick={scrollPrev}
             aria-label="Avant/après précédent"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-ink ring-1 ring-line hover:bg-bg-soft"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-ink ring-1 ring-line hover:bg-bg-soft"
           >
             ‹
           </button>
@@ -41,7 +47,7 @@ export function BeforeAfter() {
             type="button"
             onClick={scrollNext}
             aria-label="Avant/après suivant"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-ink ring-1 ring-line hover:bg-bg-soft"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-ink ring-1 ring-line hover:bg-bg-soft"
           >
             ›
           </button>
@@ -53,35 +59,15 @@ export function BeforeAfter() {
           {beforeAfter.map((pair) => (
             <figure
               key={pair.title}
-              className="min-w-0 flex-[0_0_88%] overflow-hidden rounded-2xl border border-line bg-white/60 sm:flex-[0_0_48%] lg:flex-[0_0_32%]"
+              className="min-w-0 flex-[0_0_92%] sm:flex-[0_0_80%] lg:flex-[0_0_62%]"
             >
-              <div className="grid grid-cols-2">
-                <div className="relative">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={asset(pair.before)}
-                    alt={pair.beforeAlt}
-                    loading="lazy"
-                    className="aspect-[4/3] h-full w-full object-cover"
-                  />
-                  <span className="absolute left-2 top-2 rounded-full bg-ink/80 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-bg">
-                    Avant
-                  </span>
-                </div>
-                <div className="relative border-l-2 border-white">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={asset(pair.after)}
-                    alt={pair.afterAlt}
-                    loading="lazy"
-                    className="aspect-[4/3] h-full w-full object-cover"
-                  />
-                  <span className="absolute right-2 top-2 rounded-full bg-cta px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-ink">
-                    Après
-                  </span>
-                </div>
-              </div>
-              <figcaption className="px-4 py-3 text-sm font-semibold text-ink">
+              <BeforeAfterSlider
+                before={pair.before}
+                after={pair.after}
+                beforeAlt={pair.beforeAlt}
+                afterAlt={pair.afterAlt}
+              />
+              <figcaption className="mt-3 text-center text-sm font-semibold text-ink">
                 {pair.title}
               </figcaption>
             </figure>
