@@ -35,15 +35,6 @@ async function main() {
   });
 
   const raw = await res.text();
-  // TEMP diagnostic (public) — remove once confirmed working.
-  try {
-    await fs.writeFile(
-      path.join(process.cwd(), "public", "_rating-debug.json"),
-      JSON.stringify({ status: res.status, body: raw.slice(0, 1200) }, null, 2),
-    );
-  } catch {
-    /* ignore */
-  }
   if (!res.ok) {
     console.warn(`[google-rating] API ${res.status} — body: ${raw.slice(0, 300)}`);
     return;
