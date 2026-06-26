@@ -14,6 +14,7 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { MobileStickyCta } from "./components/MobileStickyCta";
+import { ChatWidget } from "./components/ChatWidget";
 import { JsonLd } from "./components/JsonLd";
 import { Reveal } from "./components/Reveal";
 
@@ -37,6 +38,7 @@ export default function Home() {
         <Reveal><Contact /></Reveal>
       </main>
       <Footer />
+      <ChatWidget />
       <WhatsAppButton />
       <MobileStickyCta />
     </>
