@@ -37,24 +37,17 @@ export function Header() {
   }, [open]);
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-colors ${
-        scrolled
-          ? "border-b border-line bg-bg/90 backdrop-blur"
-          : "border-b border-transparent bg-bg/0"
-      }`}
-    >
+    <header className="sticky top-0 z-50 border-b border-line bg-bg/90 backdrop-blur">
       <div
         className={`mx-auto flex max-w-6xl items-center justify-between px-4 transition-all duration-300 sm:px-6 ${
           scrolled ? "h-14" : "h-16"
         }`}
       >
-        <a href="#top" aria-label={`${site.name} — accueil`} className="flex items-center">
-          {/* Dark logo on the white scrolled header; light logo over the hero. */}
+        <a href="#top" aria-label={`${site.name}, accueil`} className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={asset(scrolled ? "/images/logo.png" : "/images/logo-light.png")}
-            alt={`${site.name} — peintre en bâtiment à ${site.city}`}
+            src={asset("/images/logo.png")}
+            alt={`${site.name}, peintre en bâtiment à ${site.city}`}
             className={`w-auto transition-all duration-300 ${scrolled ? "h-8" : "h-9"}`}
           />
         </a>

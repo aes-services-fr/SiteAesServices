@@ -206,24 +206,24 @@ export const galleryCategories: GalleryCategory[] = [
 // Curated gallery (client chantiers). Files under /public/images/realisations/.
 export const gallery: GalleryImage[] = [
   // Salon / séjour
-  { src: "/images/realisations/r14.jpg", category: "Salon", alt: "Grande pièce de vie repeinte en blanc avec poêle à granulés — peintre à Bourges (18)" },
-  { src: "/images/realisations/r27.jpg", category: "Salon", alt: "Salon lumineux ouvert sur le jardin — peinture intérieure à Bourges" },
-  { src: "/images/realisations/r40.jpg", category: "Salon", alt: "Salon de caractère rénové en blanc, rosace de plafond préservée — peintre à Bourges (18)" },
-  { src: "/images/realisations/r33.jpg", category: "Salon", alt: "Séjour aux murs taupe avec entrée noire — peinture décorative à Bourges" },
-  { src: "/images/realisations/r20.jpg", category: "Salon", alt: "Séjour avec mur d'accent taupe et verrière atelier — mise en couleur à Bourges (18)" },
-  { src: "/images/realisations/r13.jpg", category: "Salon", alt: "Séjour gris perle avec verrière — peinture intérieure à Bourges" },
+  { src: "/images/realisations/r14.jpg", category: "Salon", alt: "Grande pièce de vie repeinte en blanc avec poêle à granulés, peintre à Bourges (18)" },
+  { src: "/images/realisations/r27.jpg", category: "Salon", alt: "Salon lumineux ouvert sur le jardin, peinture intérieure à Bourges" },
+  { src: "/images/realisations/r40.jpg", category: "Salon", alt: "Salon de caractère rénové en blanc, rosace de plafond préservée, peintre à Bourges (18)" },
+  { src: "/images/realisations/r33.jpg", category: "Salon", alt: "Séjour aux murs taupe avec entrée noire, peinture décorative à Bourges" },
+  { src: "/images/realisations/r20.jpg", category: "Salon", alt: "Séjour avec mur d'accent taupe et verrière atelier, mise en couleur à Bourges (18)" },
+  { src: "/images/realisations/r13.jpg", category: "Salon", alt: "Séjour gris perle avec verrière, peinture intérieure à Bourges" },
   // Cuisine
-  { src: "/images/realisations/r44.jpg", category: "Cuisine", alt: "Pièce de vie ouverte sur cuisine, mur d'accent terracotta — peintre à Bourges (18)" },
-  { src: "/images/realisations/r42.jpg", category: "Cuisine", alt: "Cuisine aux meubles vert sauge et mur terracotta — mise en couleur à Bourges" },
-  { src: "/images/realisations/r45.jpg", category: "Cuisine", alt: "Cuisine ouverte avec mur terracotta — peinture et décoration à Bourges (18)" },
+  { src: "/images/realisations/r44.jpg", category: "Cuisine", alt: "Pièce de vie ouverte sur cuisine, mur d'accent terracotta, peintre à Bourges (18)" },
+  { src: "/images/realisations/r42.jpg", category: "Cuisine", alt: "Cuisine aux meubles vert sauge et mur terracotta, mise en couleur à Bourges" },
+  { src: "/images/realisations/r45.jpg", category: "Cuisine", alt: "Cuisine ouverte avec mur terracotta, peinture et décoration à Bourges (18)" },
   // Chambre
-  { src: "/images/realisations/r36.jpg", category: "Chambre", alt: "Chambre repeinte en rose poudré — peinture décorative à Bourges (18)" },
-  { src: "/images/realisations/r37.jpg", category: "Chambre", alt: "Chambre rénovée en rose poudré, finitions soignées — peintre à Bourges" },
-  { src: "/images/realisations/r02.jpg", category: "Chambre", alt: "Dressing sous escalier peint en bleu canard — mise en couleur à Bourges (18)" },
+  { src: "/images/realisations/r36.jpg", category: "Chambre", alt: "Chambre repeinte en rose poudré, peinture décorative à Bourges (18)" },
+  { src: "/images/realisations/r37.jpg", category: "Chambre", alt: "Chambre rénovée en rose poudré, finitions soignées, peintre à Bourges" },
+  { src: "/images/realisations/r02.jpg", category: "Chambre", alt: "Dressing sous escalier peint en bleu canard, mise en couleur à Bourges (18)" },
   // Salle d'eau
-  { src: "/images/realisations/r32.jpg", category: "Salle d'eau", alt: "Salle d'eau avec faïence et sol béton ciré — peintre en bâtiment à Bourges (18)" },
+  { src: "/images/realisations/r32.jpg", category: "Salle d'eau", alt: "Salle d'eau avec faïence et sol béton ciré, peintre en bâtiment à Bourges (18)" },
   // Extérieur
-  { src: "/images/realisations/r22.jpg", category: "Extérieur", alt: "Façade et volet de lucarne repeints — peinture extérieure à Bourges (18)" },
+  { src: "/images/realisations/r22.jpg", category: "Extérieur", alt: "Façade et volet de lucarne repeints, peinture extérieure à Bourges (18)" },
 ];
 
 export type BeforeAfter = {
@@ -240,36 +240,36 @@ export const beforeAfter: BeforeAfter[] = [
     title: "Chambre rénovée",
     before: "/images/realisations/r34.jpg",
     after: "/images/realisations/r37.jpg",
-    beforeAlt: "Chambre avant travaux, ancien papier peint décollé et murs abîmés — chantier de rénovation à Bourges",
-    afterAlt: "Chambre repeinte en rose poudré, finitions soignées — peintre en bâtiment à Bourges (18)",
+    beforeAlt: "Chambre avant travaux, ancien papier peint décollé et murs abîmés, chantier de rénovation à Bourges",
+    afterAlt: "Chambre repeinte en rose poudré, finitions soignées, peintre en bâtiment à Bourges (18)",
   },
   {
     title: "Pièce de caractère",
     before: "/images/realisations/r39.jpg",
     after: "/images/realisations/r40.jpg",
-    beforeAlt: "Grande pièce avant rénovation, enduits dégradés et rosace de plafond — chantier à Bourges",
-    afterAlt: "Grande pièce rénovée en blanc, rosace de plafond préservée — peintre à Bourges (18)",
+    beforeAlt: "Grande pièce avant rénovation, enduits dégradés et rosace de plafond, chantier à Bourges",
+    afterAlt: "Grande pièce rénovée en blanc, rosace de plafond préservée, peintre à Bourges (18)",
   },
   {
     title: "Pièce à moulures",
     before: "/images/realisations/r38.jpg",
     after: "/images/realisations/r41.jpg",
-    beforeAlt: "Pièce ancienne avant travaux, plâtres et moulures abîmés — chantier de rénovation à Bourges",
-    afterAlt: "Pièce rénovée en blanc, moulures et rosaces mises en valeur — peintre à Bourges (18)",
+    beforeAlt: "Pièce ancienne avant travaux, plâtres et moulures abîmés, chantier de rénovation à Bourges",
+    afterAlt: "Pièce rénovée en blanc, moulures et rosaces mises en valeur, peintre à Bourges (18)",
   },
   {
     title: "Entrée & dégagement",
     before: "/images/realisations/r26.jpg",
     after: "/images/realisations/r29.jpg",
-    beforeAlt: "Entrée en préparation, sol protégé avant mise en peinture — chantier à Bourges",
-    afterAlt: "Entrée et dégagement finis, murs beige — peintre en bâtiment à Bourges (18)",
+    beforeAlt: "Entrée en préparation, sol protégé avant mise en peinture, chantier à Bourges",
+    afterAlt: "Entrée et dégagement finis, murs beige, peintre en bâtiment à Bourges (18)",
   },
   {
     title: "Façade & volet",
     before: "/images/realisations/r18.jpg",
     after: "/images/realisations/r22.jpg",
-    beforeAlt: "Façade et volet de lucarne avant travaux — peinture extérieure, peintre à Bourges (18)",
-    afterAlt: "Façade et volet repeints en blanc — peinture extérieure à Bourges (18)",
+    beforeAlt: "Façade et volet de lucarne avant travaux, peinture extérieure, peintre à Bourges (18)",
+    afterAlt: "Façade et volet repeints en blanc, peinture extérieure à Bourges (18)",
   },
 ];
 

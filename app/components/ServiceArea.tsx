@@ -46,7 +46,7 @@ export function ServiceArea() {
 
         <div className="overflow-hidden rounded-3xl border border-line shadow-sm">
           <iframe
-            title={`Carte — zone d'intervention de ${site.name} autour de ${site.city}`}
+            title={`Carte, zone d'intervention de ${site.name} autour de ${site.city}`}
             src={mapSrc}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

@@ -8,7 +8,7 @@ type Status = "idle" | "loading" | "success" | "error";
 
 // Quote form. If a Web3Forms access key is configured, submissions are sent
 // straight to the painter's inbox via fetch (no mail app needed). Otherwise it
-// falls back to a mailto: link — both work on a static export.
+// falls back to a mailto: link, both work on a static export.
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const useApi = Boolean(site.formAccessKey);
@@ -32,8 +32,8 @@ export function ContactForm() {
           headers: { "Content-Type": "application/json", Accept: "application/json" },
           body: JSON.stringify({
             access_key: site.formAccessKey,
-            subject: `Demande de devis — ${name || "site web"}`,
-            from_name: `${site.name} — site web`,
+            subject: `Demande de devis, ${name || "site web"}`,
+            from_name: `${site.name}, site web`,
             name,
             phone,
             email: email || "non renseigné",
@@ -50,7 +50,7 @@ export function ContactForm() {
 
     // Fallback: mailto
     e.preventDefault();
-    const subject = `Demande de devis — ${name || "site web"}`;
+    const subject = `Demande de devis, ${name || "site web"}`;
     const body = [
       `Nom : ${name}`,
       `Téléphone : ${phone}`,

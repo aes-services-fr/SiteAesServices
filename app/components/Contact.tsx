@@ -102,7 +102,7 @@ export function Contact() {
                 withIcon
                 className="w-full"
               >
-                Être rappelé — {site.phoneDisplay}
+                Être rappelé au {site.phoneDisplay}
               </BookingButton>
             </div>
           </div>

@@ -5,7 +5,7 @@ const STEPS = [
     n: "1",
     icon: MailIcon,
     title: "Devis gratuit",
-    text: "On échange sur votre projet, on visite si besoin, et vous recevez un devis clair et détaillé — sans engagement.",
+    text: "On échange sur votre projet, on visite si besoin, et vous recevez un devis clair et détaillé, sans engagement.",
   },
   {
     n: "2",

@@ -4,28 +4,18 @@ import { asset } from "../lib/asset";
 import { PhoneIcon, MailIcon, MapPinIcon } from "./icons";
 import { ManageCookiesButton } from "./Analytics";
 
-const NAV = [
-  { href: "#prestations", label: "Prestations" },
-  { href: "#realisations", label: "Réalisations" },
-  { href: "#a-propos", label: "À propos" },
-  { href: "#avis", label: "Avis" },
-  { href: "#zone", label: "Zone d'intervention" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#contact", label: "Contact" },
-];
-
 export function Footer() {
   const year = "2026"; // build-time constant (export statique)
 
   return (
     <footer className="bg-ink text-bg">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
         {/* Brand */}
         <div className="md:col-span-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={asset("/images/logo-light.png")}
-            alt={`${site.name} — peintre en bâtiment`}
+            alt={`${site.name}, peintre en bâtiment`}
             className="h-10 w-auto"
           />
           <p className="mt-3 max-w-sm text-sm text-bg/70">
@@ -71,25 +61,9 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Nav */}
-        <div>
-          <h3 className="font-serif text-sm font-bold uppercase tracking-wide text-bg/60">
-            Navigation
-          </h3>
-          <ul className="mt-4 space-y-2 text-sm">
-            {NAV.map((n) => (
-              <li key={n.href}>
-                <a href={n.href} className="text-bg/80 hover:text-bg">
-                  {n.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
         {/* Areas */}
         <div>
-          <h3 className="font-serif text-sm font-bold uppercase tracking-wide text-bg/60">
+          <h3 className="font-serif text-sm font-bold uppercase tracking-wide text-sage">
             Secteur
           </h3>
           <p className="mt-4 text-sm text-bg/70">

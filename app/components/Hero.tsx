@@ -34,7 +34,7 @@ export function Hero() {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={asset("/images/hero.jpg")}
-        alt="Intérieur peint par AES Services — mur vert sauge, finitions soignées à Bourges"
+        alt="Intérieur peint par AES Services, mur vert sauge, finitions soignées à Bourges"
         className="absolute inset-0 -z-20 h-full w-full object-cover animate-kenburns"
         fetchPriority="high"
       />
@@ -44,7 +44,7 @@ export function Hero() {
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(120% 80% at 85% 0%, color-mix(in srgb, var(--color-sage) 20%, transparent) 0%, transparent 55%), linear-gradient(180deg, color-mix(in srgb, var(--color-ink) 78%, transparent) 0%, color-mix(in srgb, var(--color-ink) 40%, transparent) 32%, color-mix(in srgb, var(--color-ink) 40%, transparent) 62%, color-mix(in srgb, var(--color-ink) 82%, transparent) 100%)",
+            "radial-gradient(120% 80% at 85% 0%, color-mix(in srgb, var(--color-sage) 18%, transparent) 0%, transparent 55%), linear-gradient(180deg, color-mix(in srgb, var(--color-ink) 88%, transparent) 0%, color-mix(in srgb, var(--color-ink) 62%, transparent) 35%, color-mix(in srgb, var(--color-ink) 60%, transparent) 65%, color-mix(in srgb, var(--color-ink) 90%, transparent) 100%)",
         }}
       />
 

@@ -1,7 +1,7 @@
 import { site, faqs, services, has } from "../lib/site";
 import { baseUrl, abs } from "../lib/seo";
 
-// Three distinct JSON-LD blocks: the business (HousePainter — more precise than
+// Three distinct JSON-LD blocks: the business (HousePainter, more precise than
 // LocalBusiness for this trade), the artisan (Person) and the FAQ (FAQPage).
 export function JsonLd() {
   const sameAs = [site.social.instagram, site.social.facebook].filter(Boolean);

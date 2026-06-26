@@ -32,7 +32,7 @@ export default function MentionsLegales() {
 
       <section className="mt-8 space-y-2 text-sm leading-relaxed">
         <h2 className="text-xl font-semibold text-ink">Éditeur du site</h2>
-        <Field label="Dénomination" value={`${site.legalName} — ${site.name}`} />
+        <Field label="Dénomination" value={`${site.legalName}, ${site.name}`} />
         <Field label="Forme juridique" value={site.legal.forme} />
         <Field label="Activité" value={site.trade} />
         <Field
@@ -54,7 +54,7 @@ export default function MentionsLegales() {
       <section className="mt-8 space-y-2 text-sm leading-relaxed">
         <h2 className="text-xl font-semibold text-ink">Hébergement</h2>
         <p className="text-ink-soft">
-          Ce site est hébergé par GitHub Pages — GitHub Inc., 88 Colin P. Kelly
+          Ce site est hébergé par GitHub Pages, GitHub Inc., 88 Colin P. Kelly
           Jr. Street, San Francisco, CA 94107, États-Unis.
         </p>
       </section>

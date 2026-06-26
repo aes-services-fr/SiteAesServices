@@ -21,37 +21,17 @@ export function BeforeAfter() {
 
   return (
     <section id="avant-apres" className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-      <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-wide text-accent">
-            Avant / Après
-          </p>
-          <h2 className="mt-2 font-serif text-3xl font-bold text-ink sm:text-4xl">
-            La transformation, en images
-          </h2>
-          <p className="mt-3 text-ink-soft">
-            Faites glisser le trait pour comparer l&apos;avant et l&apos;après de
-            nos chantiers.
-          </p>
-        </div>
-        <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={scrollPrev}
-            aria-label="Avant/après précédent"
-            className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-ink ring-1 ring-line hover:bg-bg-soft"
-          >
-            ‹
-          </button>
-          <button
-            type="button"
-            onClick={scrollNext}
-            aria-label="Avant/après suivant"
-            className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-ink ring-1 ring-line hover:bg-bg-soft"
-          >
-            ›
-          </button>
-        </div>
+      <div className="mb-8 max-w-2xl">
+        <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+          Avant / Après
+        </p>
+        <h2 className="mt-2 font-serif text-3xl font-bold text-ink sm:text-4xl">
+          La transformation, en images
+        </h2>
+        <p className="mt-3 text-ink-soft">
+          Faites glisser le trait pour comparer l&apos;avant et l&apos;après de
+          nos chantiers.
+        </p>
       </div>
 
       <div className="overflow-hidden" ref={emblaRef}>
@@ -73,6 +53,26 @@ export function BeforeAfter() {
             </figure>
           ))}
         </div>
+      </div>
+
+      {/* Navigation below the images */}
+      <div className="mt-6 flex items-center justify-center gap-3">
+        <button
+          type="button"
+          onClick={scrollPrev}
+          aria-label="Avant/après précédent"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-lg text-white shadow-sm transition-colors hover:bg-[color-mix(in_srgb,var(--color-accent)_88%,black)]"
+        >
+          ‹
+        </button>
+        <button
+          type="button"
+          onClick={scrollNext}
+          aria-label="Avant/après suivant"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-lg text-white shadow-sm transition-colors hover:bg-[color-mix(in_srgb,var(--color-accent)_88%,black)]"
+        >
+          ›
+        </button>
       </div>
     </section>
   );

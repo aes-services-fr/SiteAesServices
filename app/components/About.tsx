@@ -40,7 +40,7 @@ export function About() {
             Artisan peintre autodidacte et passionné, fort de plus de{" "}
             {site.experienceYears} ans d&apos;expérience, je mets un point
             d&apos;honneur à livrer un travail net, durable et conforme à vos
-            attentes — préparation soignée, finitions propres et délais tenus.
+            attentes, préparation soignée, finitions propres et délais tenus.
           </p>
 
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
