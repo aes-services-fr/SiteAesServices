@@ -14,7 +14,7 @@ const PUBLIC = path.join(ROOT, "public");
 const BRAND = {
   name: "AES Services",
   tagline: "Peintre en bâtiment à Bourges",
-  subline: "Devis gratuit · Bourges et 60 km alentour",
+  subline: "Devis gratuit · Bourges et 30 km alentour",
   bg: "#2c2e30", // charcoal (logo black)
   bgSoft: "#3a3d3f",
   accent: "#a8cd9e", // sage green (logo)

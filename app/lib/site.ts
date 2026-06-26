@@ -54,7 +54,7 @@ export const site = {
   },
   artisanName: "Sébastien Joaquim", // artisan principal
   city: "Bourges",
-  radiusKm: "60",
+  radiusKm: "30",
   experienceYears: "2", // affiché « plus de 2 ans »
 
   // --- Contact ---------------------------------------------------------------
@@ -80,7 +80,7 @@ export const site = {
   google: {
     hasReviews: true,
     rating: "5,0",
-    reviewCount: "14",
+    reviewCount: "16",
     cid: "", // CID Google Business Profile (à fournir)
     reviewUrl: "https://share.google/EeVtthL3hxQtL3Jhk",
     mapEmbedQuery: "AES Services peintre La Chapelle-Saint-Ursin Bourges",
@@ -109,7 +109,7 @@ export const site = {
   // --- Analytics -------------------------------------------------------------
   gaMeasurementId: "", // "G-XXXXXXXXXX" si fourni
 
-  // --- Zone d'intervention (villes / quartiers dans un rayon de 60 km) -------
+  // --- Zone d'intervention (villes / quartiers dans un rayon de ~30 km) ------
   areas: [
     "Bourges",
     "La Chapelle-Saint-Ursin",
@@ -117,16 +117,14 @@ export const site = {
     "Saint-Germain-du-Puy",
     "Trouy",
     "Marmagne",
+    "Plaimpied-Givaudins",
     "Saint-Florent-sur-Cher",
     "Mehun-sur-Yèvre",
-    "Vierzon",
     "Lévet",
+    "Saint-Just",
     "Avord",
     "Baugy",
     "Dun-sur-Auron",
-    "Nérondes",
-    "Aubigny-sur-Nère",
-    "Sancerre",
   ] as string[],
 } as const;
 
@@ -238,20 +236,6 @@ export const beforeAfter: BeforeAfter[] = [
     afterAlt: "Pièce rénovée en blanc, moulures et rosaces mises en valeur — peintre à Bourges (18)",
   },
   {
-    title: "Séjour & escalier",
-    before: "/images/realisations/r11.jpg",
-    after: "/images/realisations/r28.jpg",
-    beforeAlt: "Séjour et cage d'escalier en cours de peinture, sol protégé — chantier à Bourges",
-    afterAlt: "Séjour et escalier finis, murs gris et parquet — peintre en bâtiment à Bourges (18)",
-  },
-  {
-    title: "Montée d'escalier",
-    before: "/images/realisations/r07.jpg",
-    after: "/images/realisations/r19.jpg",
-    beforeAlt: "Montée d'escalier avant finition, sol protégé — chantier de peinture à Bourges",
-    afterAlt: "Montée d'escalier finie, murs gris perle — peinture intérieure à Bourges (18)",
-  },
-  {
     title: "Entrée & dégagement",
     before: "/images/realisations/r26.jpg",
     after: "/images/realisations/r29.jpg",
@@ -271,7 +255,7 @@ export const beforeAfter: BeforeAfter[] = [
 export const faqs: Faq[] = [
   {
     q: "Le devis est-il vraiment gratuit ?",
-    a: "Oui. Le déplacement et l'établissement du devis sont entièrement gratuits et sans engagement, partout dans un rayon de 60 km autour de Bourges.",
+    a: "Oui. Le déplacement et l'établissement du devis sont entièrement gratuits et sans engagement, partout dans un rayon de 30 km autour de Bourges.",
   },
   {
     q: "Intervenez-vous chez les particuliers et les professionnels ?",
@@ -279,7 +263,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Dans quel secteur vous déplacez-vous ?",
-    a: "Nous intervenons à Bourges et dans tout le Cher, dans un rayon d'environ 60 km : Saint-Doulchard, Vierzon, Mehun-sur-Yèvre, Saint-Florent-sur-Cher et les communes alentours.",
+    a: "Nous intervenons à Bourges et dans les communes alentour, dans un rayon d'environ 30 km : Saint-Doulchard, Saint-Germain-du-Puy, Mehun-sur-Yèvre, Saint-Florent-sur-Cher, Trouy et les villages voisins.",
   },
   {
     q: "Combien de temps dure un chantier de peinture ?",

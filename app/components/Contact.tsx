@@ -88,10 +88,9 @@ export function Contact() {
                 <MapPinIcon className="text-xl" />
               </span>
               <span>
-                <span className="block text-xs text-ink-soft">Adresse</span>
+                <span className="block text-xs text-ink-soft">Secteur</span>
                 <span className="block font-semibold text-ink">
-                  {site.address.street}, {site.address.postalCode}{" "}
-                  {site.address.city}
+                  {site.address.city} et alentours de {site.city}
                 </span>
               </span>
             </div>

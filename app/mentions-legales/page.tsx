@@ -36,8 +36,8 @@ export default function MentionsLegales() {
         <Field label="Forme juridique" value={site.legal.forme} />
         <Field label="Activité" value={site.trade} />
         <Field
-          label="Adresse"
-          value={`${site.address.street}, ${site.address.postalCode} ${site.address.city}`}
+          label="Siège"
+          value={`${site.address.postalCode} ${site.address.city}`}
         />
         <Field label="SIREN" value={site.legal.siren} />
         <Field label="SIRET (siège)" value={site.legal.siret} />

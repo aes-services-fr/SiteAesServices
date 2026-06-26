@@ -18,9 +18,9 @@ export function JsonLd() {
     email: site.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: site.address.street,
       postalCode: site.address.postalCode,
       addressLocality: site.address.city,
+      addressRegion: "Cher",
       addressCountry: site.address.country,
     },
     areaServed: site.areas.map((a) => ({ "@type": "City", name: a })),

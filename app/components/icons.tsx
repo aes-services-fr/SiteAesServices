@@ -113,3 +113,47 @@ export const HandshakeIcon = (p: P) => (
     <path d="M3 11l3 3M21 11l-3 3" />
   </svg>
 );
+
+// Taloche / lissage (ratissage & ponçage)
+export const TrowelIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M3 14l9-9 6 6-9 9-7 1z" />
+    <path d="M14 7l3 3" />
+  </svg>
+);
+
+// Plaque de placo / bandes
+export const PanelIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <rect x="3" y="4" width="18" height="16" rx="1" />
+    <path d="M9 4v16M15 4v16" />
+  </svg>
+);
+
+// Palette (décoration & mise en couleur)
+export const PaletteIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M12 3a9 9 0 0 0 0 18 2.5 2.5 0 0 0 2-4 2 2 0 0 1 1.6-3.2H18a3 3 0 0 0 3-3A9 9 0 0 0 12 3z" />
+    <circle cx="7.5" cy="11.5" r="1" />
+    <circle cx="9.5" cy="7.5" r="1" />
+    <circle cx="14.5" cy="7.5" r="1" />
+  </svg>
+);
+
+// Porte (boiseries & menuiseries)
+export const DoorIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17" />
+    <path d="M3 21h18" />
+    <path d="M15 12v.5" />
+  </svg>
+);
+
+// Maison (peinture extérieure)
+export const HouseIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M3 11l9-7 9 7" />
+    <path d="M5 10v10h14V10" />
+    <path d="M10 20v-6h4v6" />
+  </svg>
+);

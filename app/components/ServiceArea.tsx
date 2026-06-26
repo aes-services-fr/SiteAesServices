@@ -2,11 +2,10 @@ import { site } from "../lib/site";
 import { MapPinIcon } from "./icons";
 
 export function ServiceArea() {
-  const mapQuery = encodeURIComponent(
-    `${site.address.street}, ${site.address.postalCode} ${site.address.city}`,
-  );
+  // Centre the map on the main intervention city (not the artisan's home).
+  const mapQuery = encodeURIComponent(`${site.city}, France`);
   // Keyless Google Maps embed (works without an API key).
-  const mapSrc = `https://www.google.com/maps?q=${mapQuery}&z=10&output=embed`;
+  const mapSrc = `https://www.google.com/maps?q=${mapQuery}&z=11&output=embed`;
 
   return (
     <section id="zone" className="bg-bg-soft py-20">

@@ -38,7 +38,7 @@ export function Footer() {
             </a>
             <span className="flex items-center gap-2 text-bg/70">
               <MapPinIcon className="text-base text-accent-soft" />
-              {site.address.street}, {site.address.postalCode} {site.address.city}
+              {site.address.city} ({site.address.postalCode.slice(0, 2)})
             </span>
           </div>
 

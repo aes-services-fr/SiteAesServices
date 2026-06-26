@@ -1,9 +1,28 @@
 "use client";
 
 import { useState } from "react";
+import type { SVGProps, ReactNode } from "react";
 import { services } from "../lib/site";
 import { BookingButton } from "./BookingButton";
-import { RollerIcon, ChevronDownIcon } from "./icons";
+import {
+  RollerIcon,
+  TrowelIcon,
+  PanelIcon,
+  PaletteIcon,
+  DoorIcon,
+  HouseIcon,
+  ChevronDownIcon,
+} from "./icons";
+
+// One icon per service (keyed by service id).
+const SERVICE_ICONS: Record<string, (p: SVGProps<SVGSVGElement>) => ReactNode> = {
+  "mise-en-peinture": RollerIcon,
+  "ratissage-poncage": TrowelIcon,
+  "bandes-placo": PanelIcon,
+  "decoration-couleur": PaletteIcon,
+  "boiseries-menuiseries": DoorIcon,
+  "peinture-exterieure": HouseIcon,
+};
 
 // Services grid. Mobile: 2 compact columns, tap a card to expand its
 // description. Desktop: 3 columns with descriptions always visible.
@@ -28,13 +47,14 @@ export function Services() {
       <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
         {services.map((s) => {
           const isOpen = openId === s.id;
+          const Icon = SERVICE_ICONS[s.id] ?? RollerIcon;
           return (
             <article
               key={s.id}
               className="flex flex-col rounded-2xl border border-line bg-white/60 p-4 sm:p-6"
             >
               <span className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-accent/12 text-accent">
-                <RollerIcon className="text-xl" />
+                <Icon className="text-xl" />
               </span>
 
               <h3 className="font-serif text-base font-bold text-ink sm:text-lg">

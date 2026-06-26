@@ -48,7 +48,7 @@ export function Hero() {
 
         <h1 className="max-w-3xl font-serif text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-6xl">
           Peintre en bâtiment à {site.city}
-          <span className="text-accent-soft"> et 60 km alentour</span>
+          <span className="text-accent-soft"> et {site.radiusKm} km alentour</span>
         </h1>
 
         <p className="max-w-xl text-lg text-bg/80">
