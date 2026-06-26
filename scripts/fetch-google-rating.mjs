@@ -25,11 +25,20 @@ async function main() {
   const res = await fetch(`https://places.googleapis.com/v1/places/${PLACE}`, {
     headers: {
       "X-Goog-Api-Key": KEY,
-      "X-Goog-FieldMask": "rating,userRatingCount",
+      "X-Goog-FieldMask": "displayName,rating,userRatingCount",
     },
   });
 
   const raw = await res.text();
+  // Temporary diagnostic file (public) — remove once the rating works.
+  try {
+    await fs.writeFile(
+      path.join(process.cwd(), "public", "_rating-debug.json"),
+      JSON.stringify({ status: res.status, body: raw.slice(0, 1000) }, null, 2),
+    );
+  } catch {
+    /* ignore */
+  }
   if (!res.ok) {
     console.warn(`[google-rating] API ${res.status} — body: ${raw.slice(0, 400)}`);
     return;
