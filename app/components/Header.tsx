@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { site } from "../lib/site";
+import { asset } from "../lib/asset";
 import { trackEvent } from "../lib/analytics";
 import { BookingButton } from "./BookingButton";
-import { Logo } from "./Logo";
 import { MenuIcon, CloseIcon, PhoneIcon } from "./icons";
 
 const NAV = [
@@ -46,7 +46,13 @@ export function Header() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <a href="#top" aria-label={`${site.name} — accueil`} className="flex items-center">
-          <Logo size={22} />
+          {/* Dark logo on the white scrolled header; light logo over the hero. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={asset(scrolled ? "/images/logo.png" : "/images/logo-light.png")}
+            alt={`${site.name} — peintre en bâtiment à ${site.city}`}
+            className="h-9 w-auto"
+          />
         </a>
 
         <nav className="hidden items-center gap-6 lg:flex">

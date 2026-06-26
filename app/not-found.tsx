@@ -1,12 +1,17 @@
 import Link from "next/link";
 import { site } from "./lib/site";
-import { Logo } from "./components/Logo";
+import { asset } from "./lib/asset";
 import { PhoneIcon } from "./components/icons";
 
 export default function NotFound() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-6 bg-bg px-6 text-center">
-      <Logo size={28} />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={asset("/images/logo.png")}
+        alt={`${site.name}`}
+        className="h-11 w-auto"
+      />
       <p className="font-serif text-7xl font-bold text-line">404</p>
       <div>
         <h1 className="font-serif text-2xl font-bold text-ink">

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { site } from "../lib/site";
-import { Logo } from "./Logo";
+import { asset } from "../lib/asset";
 import { PhoneIcon, MailIcon, MapPinIcon } from "./icons";
 import { ManageCookiesButton } from "./Analytics";
 
@@ -22,7 +22,12 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
         {/* Brand */}
         <div className="md:col-span-2">
-          <Logo size={24} tone="light" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={asset("/images/logo-light.png")}
+            alt={`${site.name} — peintre en bâtiment`}
+            className="h-10 w-auto"
+          />
           <p className="mt-3 max-w-sm text-sm text-bg/70">
             {site.trade} à {site.city}. Peinture intérieure et extérieure,
             ravalement de façade et décoration. Devis gratuit dans un rayon de{" "}
