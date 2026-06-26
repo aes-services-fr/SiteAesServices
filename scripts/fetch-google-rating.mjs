@@ -10,12 +10,15 @@ import path from "node:path";
 
 const OUT = path.join(process.cwd(), "app", "lib", "google-rating.json");
 
+// Place ID is public (appears in Google Maps URLs) so it can live in code.
+// Overridable via GOOGLE_PLACE_ID if it ever changes.
+const PLACE = process.env.GOOGLE_PLACE_ID || "ChIJx9_eNMSU-kcRCOU0BBYYZ48";
+// The API key IS sensitive — provided only via the GOOGLE_MAPS_API_KEY secret.
 const KEY = process.env.GOOGLE_MAPS_API_KEY;
-const PLACE = process.env.GOOGLE_PLACE_ID;
 
 async function main() {
   if (!KEY || !PLACE) {
-    console.log("[google-rating] no API key / place id — keeping current values.");
+    console.log("[google-rating] no API key — keeping current values.");
     return;
   }
 
