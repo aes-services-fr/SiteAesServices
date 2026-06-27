@@ -7,9 +7,9 @@
 /* bouton sur fond blanc ou foncé (contraste WCAG AA).                  */
 /* ------------------------------------------------------------------ */
 @theme {
-  /* Fond de page teinté vert sauge (les cartes restent en blanc pur). */
-  --color-bg: #e9f0e3;
-  --color-bg-soft: #dde8d2;
+  /* Fond de page très légèrement teinté (les cartes restent en blanc pur). */
+  --color-bg: #f7f9f5;
+  --color-bg-soft: #eef2ea;
   --color-ink: #2c2e30;
   --color-ink-soft: #565b57;
   --color-accent: #4f7a43;
@@ -17,8 +17,8 @@
   --color-sage: #a8cd9e;
   --color-sage-soft: #d8e9d1;
   --color-cta: #f5a721; /* couleur des boutons d'appel à l'action */
-  --color-muted: #7e857c;
-  --color-line: #d2ddc7;
+  --color-muted: #8b908a;
+  --color-line: #e3e8df;
 
   /* Police Helvetica (comme le logo) sur tout le site. */
   --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
