@@ -6,6 +6,7 @@ import { Gallery } from "./components/Gallery";
 import { BeforeAfter } from "./components/BeforeAfter";
 import { Method } from "./components/Method";
 import { About } from "./components/About";
+import { ChantierVideos } from "./components/ChantierVideos";
 import { Reviews } from "./components/Reviews";
 import { ServiceArea } from "./components/ServiceArea";
 import { Faq } from "./components/Faq";
@@ -31,6 +32,7 @@ export default function Home() {
         <Reveal><BeforeAfter /></Reveal>
         <Reveal><Method /></Reveal>
         <Reveal><About /></Reveal>
+        <Reveal><ChantierVideos /></Reveal>
         <Reveal><Reviews /></Reveal>
         <Reveal><ServiceArea /></Reveal>
         <Reveal><Faq /></Reveal>

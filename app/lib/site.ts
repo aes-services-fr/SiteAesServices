@@ -273,6 +273,43 @@ export const beforeAfter: BeforeAfter[] = [
   },
 ];
 
+// --- Vidéos de chantier ------------------------------------------------------
+export type ChantierVideo = {
+  src: string; // mp4 optimisé web, sans audio (lecture muette en boucle)
+  poster: string; // image d'aperçu affichée avant lecture
+  label: string; // libellé court affiché sur la vidéo
+  alt: string;
+};
+
+// Vidéos verticales (format réseaux sociaux) de Sébastien à l'œuvre. Lecture
+// auto, en boucle et sans son, uniquement quand la vidéo est à l'écran.
+export const chantierVideos: ChantierVideo[] = [
+  {
+    src: "/videos/ratissage.mp4",
+    poster: "/videos/ratissage.jpg",
+    label: "Ratissage",
+    alt: "Sébastien réalise une passe de ratissage à l'enduit sur un mur, peintre à Bourges",
+  },
+  {
+    src: "/videos/poncage.mp4",
+    poster: "/videos/poncage.jpg",
+    label: "Ponçage",
+    alt: "Ponçage d'un mur enduit avant mise en peinture, peintre en bâtiment à Bourges",
+  },
+  {
+    src: "/videos/jointage.mp4",
+    poster: "/videos/jointage.jpg",
+    label: "Bandes & jointage",
+    alt: "Pose de bandes et jointage sur cloison placo, peintre à Bourges",
+  },
+  {
+    src: "/videos/mise-en-couleur.mp4",
+    poster: "/videos/mise-en-couleur.jpg",
+    label: "Mise en couleur",
+    alt: "Mise en peinture et application de couleur sur un mur, peintre à Bourges",
+  },
+];
+
 // --- FAQ ---------------------------------------------------------------------
 export const faqs: Faq[] = [
   {
