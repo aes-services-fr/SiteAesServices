@@ -56,22 +56,26 @@ export function BeforeAfter() {
       </div>
 
       {/* Navigation below the images */}
-      <div className="mt-6 flex items-center justify-center gap-3">
+      <div className="mt-7 flex items-center justify-center gap-4">
         <button
           type="button"
           onClick={scrollPrev}
           aria-label="Avant/après précédent"
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-lg text-white shadow-sm transition-colors hover:bg-[color-mix(in_srgb,var(--color-accent)_88%,black)]"
+          className="flex h-14 w-14 items-center justify-center rounded-full bg-accent text-white shadow-md ring-2 ring-sage transition-transform hover:scale-105 hover:bg-[color-mix(in_srgb,var(--color-accent)_88%,black)]"
         >
-          ‹
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <path d="M15 6l-6 6 6 6" />
+          </svg>
         </button>
         <button
           type="button"
           onClick={scrollNext}
           aria-label="Avant/après suivant"
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-lg text-white shadow-sm transition-colors hover:bg-[color-mix(in_srgb,var(--color-accent)_88%,black)]"
+          className="flex h-14 w-14 items-center justify-center rounded-full bg-accent text-white shadow-md ring-2 ring-sage transition-transform hover:scale-105 hover:bg-[color-mix(in_srgb,var(--color-accent)_88%,black)]"
         >
-          ›
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <path d="M9 6l6 6-6 6" />
+          </svg>
         </button>
       </div>
     </section>
