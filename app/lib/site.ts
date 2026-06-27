@@ -50,8 +50,8 @@ export const has = (v: string): boolean => !isTodo(v);
 
 export const site = {
   // --- Identité --------------------------------------------------------------
-  name: "AES Services",
-  legalName: "Sébastien Joaquim", // entrepreneur individuel exploitant sous AES Services
+  name: "AES SERVICES",
+  legalName: "Sébastien Joaquim", // entrepreneur individuel exploitant sous AES SERVICES
   trade: "Peintre en bâtiment",
   legal: {
     siren: "948 744 875",
@@ -325,7 +325,7 @@ export const reviews: Review[] = [
   {
     author: "Emma Nicaud",
     rating: 5,
-    text: "Très satisfaite de l'entreprise AES Services ! Travail impeccable pour la peinture et le parquet, finitions soignées et chantier propre. Sébastien est au top : professionnel, à l'écoute et de très bon conseil. Je recommande les yeux fermés !",
+    text: "Très satisfaite de l'entreprise AES SERVICES ! Travail impeccable pour la peinture et le parquet, finitions soignées et chantier propre. Sébastien est au top : professionnel, à l'écoute et de très bon conseil. Je recommande les yeux fermés !",
   },
   {
     author: "Alice Millet",

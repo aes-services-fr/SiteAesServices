@@ -34,7 +34,7 @@ export function Hero() {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={asset("/images/hero.jpg")}
-        alt="Intérieur peint par AES Services, mur vert sauge, finitions soignées à Bourges"
+        alt="Intérieur peint par AES SERVICES, mur vert sauge, finitions soignées à Bourges"
         className="absolute inset-0 -z-20 h-full w-full object-cover animate-kenburns"
         fetchPriority="high"
       />

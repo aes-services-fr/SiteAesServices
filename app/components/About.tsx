@@ -20,7 +20,7 @@ export function About() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={asset("/images/portrait.jpg")}
-            alt={`${has(site.artisanName) ? site.artisanName + ", " : ""}peintre en bâtiment AES Services à ${site.city}`}
+            alt={`${has(site.artisanName) ? site.artisanName + ", " : ""}peintre en bâtiment AES SERVICES à ${site.city}`}
             className="h-full w-full object-cover"
             loading="lazy"
           />

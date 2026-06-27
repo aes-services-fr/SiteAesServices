@@ -45,7 +45,7 @@ const intents: Intent[] = [
     chip: "🎨 Prestations",
     reply: () => ({
       text:
-        "AES Services réalise : mise en peinture, ratissage & ponçage, pose de bandes/placo, décoration & mise en couleur, boiseries & menuiseries, et peinture extérieure.",
+        "AES SERVICES réalise : mise en peinture, ratissage & ponçage, pose de bandes/placo, décoration & mise en couleur, boiseries & menuiseries, et peinture extérieure.",
       actions: [
         { kind: "scroll", label: "Voir les prestations", target: "prestations" },
         { kind: "devis" },
@@ -211,7 +211,7 @@ export function ChatWidget() {
       {/* Launcher (sits above the WhatsApp button) */}
       <button
         type="button"
-        aria-label="Ouvrir l'assistant AES Services"
+        aria-label="Ouvrir l'assistant AES SERVICES"
         onClick={() => {
           setOpen((v) => !v);
           if (!open) trackEvent("chat_open", { source: "chat" });
