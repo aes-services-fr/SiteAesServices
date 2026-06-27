@@ -18,10 +18,10 @@ const CARDS = [
   },
 ];
 
-// Reassurance block on a full-width sage band (the brand green as a hero moment).
+// Reassurance block on a full-width softly-tinted band.
 export function FirstVisit() {
   return (
-    <section className="bg-sage py-20">
+    <section className="bg-sage-soft py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wide text-ink/60">
