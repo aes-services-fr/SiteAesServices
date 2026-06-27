@@ -62,7 +62,7 @@ export const site = {
   artisanName: "Sébastien Joaquim", // artisan principal
   city: "Bourges",
   radiusKm: "30",
-  experienceYears: "2", // affiché « plus de 2 ans »
+  experienceYears: "3", // affiché « plus de 3 ans »
 
   // --- Contact ---------------------------------------------------------------
   phone: "+33671434483",
