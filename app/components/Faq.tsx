@@ -21,7 +21,7 @@ export function Faq() {
         </h2>
       </div>
 
-      <div className="divide-y divide-line rounded-2xl border border-line bg-white/60">
+      <div className="divide-y divide-line rounded-2xl border border-line bg-white shadow-sm">
         {faqs.map((f, i) => {
           const isOpen = open === i;
           return (

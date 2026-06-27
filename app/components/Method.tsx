@@ -37,7 +37,7 @@ export function Method() {
         {STEPS.map((s) => (
           <li
             key={s.n}
-            className="relative rounded-2xl border border-line bg-white/60 p-6"
+            className="relative rounded-2xl border border-line bg-white p-6 shadow-sm"
           >
             <span className="absolute right-5 top-5 font-serif text-5xl font-bold text-line">
               {s.n}
