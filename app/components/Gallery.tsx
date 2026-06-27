@@ -85,6 +85,7 @@ export function Gallery() {
                       src={asset(img.src)}
                       alt={img.alt}
                       loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-ink/70 to-transparent p-3 text-xs font-medium text-bg">

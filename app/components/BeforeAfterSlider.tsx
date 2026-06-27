@@ -78,6 +78,7 @@ export function BeforeAfterSlider({
         alt={afterAlt}
         draggable={false}
         loading="lazy"
+        decoding="async"
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
       />
       {/* Before (clipped to the left of the handle) */}
@@ -87,6 +88,7 @@ export function BeforeAfterSlider({
         alt={beforeAlt}
         draggable={false}
         loading="lazy"
+        decoding="async"
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
         style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
       />

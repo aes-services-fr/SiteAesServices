@@ -28,22 +28,36 @@ function escapeXml(s) {
   );
 }
 
-function ogSvg() {
-  const { name, tagline, subline, bg, bgSoft, accent, ink, muted } = BRAND;
+// Text + branding overlay drawn on top of the composited photo. The left ~58%
+// is a solid charcoal panel (text always legible); the photo bleeds in on the
+// right behind a gradient fade.
+function ogOverlaySvg(rating, reviewCount) {
+  const { tagline, subline, bg, accent, ink, muted } = BRAND;
+  const star = `<path transform="translate(0,-22) scale(1.5)" d="M12 .8l3 6.1 6.7 1-4.9 4.7 1.2 6.7L12 20l-6 3.1 1.2-6.7L2.3 7.9l6.7-1z" fill="#f5a623"/>`;
+  const ratingBlock =
+    rating && reviewCount
+      ? `<g transform="translate(92,470)">
+           ${star}
+           <text x="34" y="0" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="${ink}">${escapeXml(rating)}/5</text>
+           <text x="118" y="0" font-family="Helvetica, Arial, sans-serif" font-size="26" fill="${muted}">${escapeXml(reviewCount)} avis Google</text>
+         </g>`
+      : "";
   return `<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="${bg}"/>
-      <stop offset="1" stop-color="${bgSoft}"/>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="${bg}" stop-opacity="1"/>
+      <stop offset="0.52" stop-color="${bg}" stop-opacity="1"/>
+      <stop offset="0.78" stop-color="${bg}" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="${bg}" stop-opacity="0.1"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <!-- accent brush stroke -->
+  <rect width="1200" height="630" fill="url(#fade)"/>
+  <!-- accent edge -->
   <rect x="0" y="0" width="14" height="630" fill="${accent}"/>
-  <rect x="90" y="150" width="120" height="14" rx="7" fill="${accent}"/>
-  <text x="90" y="300" font-family="Helvetica, Arial, sans-serif" font-size="84" font-weight="700" fill="${ink}">${escapeXml(name)}</text>
-  <text x="92" y="372" font-family="Helvetica, Arial, sans-serif" font-size="44" font-weight="600" fill="${accent}">${escapeXml(tagline)}</text>
-  <text x="92" y="450" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="${muted}">${escapeXml(subline)}</text>
+  <rect x="92" y="250" width="110" height="12" rx="6" fill="${accent}"/>
+  <text x="92" y="338" font-family="Helvetica, Arial, sans-serif" font-size="46" font-weight="700" fill="${accent}">${escapeXml(tagline)}</text>
+  <text x="92" y="396" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="${muted}">${escapeXml(subline)}</text>
+  ${ratingBlock}
 </svg>`;
 }
 
@@ -58,12 +72,45 @@ function iconSvg(size) {
 </svg>`;
 }
 
+async function readRating() {
+  try {
+    const raw = await fs.readFile(
+      path.join(ROOT, "app", "lib", "google-rating.json"),
+      "utf8",
+    );
+    const { rating, reviewCount } = JSON.parse(raw);
+    return { rating, reviewCount };
+  } catch {
+    return { rating: "", reviewCount: "" };
+  }
+}
+
 async function main() {
   await fs.mkdir(PUBLIC, { recursive: true });
 
-  const og = Buffer.from(ogSvg());
-  await sharp(og).jpeg({ quality: 86, mozjpeg: true }).toFile(path.join(PUBLIC, "og.jpg"));
-  console.log("[generate-og] wrote public/og.jpg (1200×630)");
+  // 1) Signature photo as the base, cropped to the OG canvas.
+  const photoPath = path.join(PUBLIC, "images", "hero.jpg");
+  const base = await sharp(photoPath)
+    .resize(1200, 630, { fit: "cover", position: "centre" })
+    .toBuffer();
+
+  // 2) Charcoal panel + text/rating overlay.
+  const { rating, reviewCount } = await readRating();
+  const overlay = Buffer.from(ogOverlaySvg(rating, reviewCount));
+
+  // 3) Brand logo (light version) top-left.
+  const logo = await sharp(path.join(PUBLIC, "images", "logo-light.png"))
+    .resize({ width: 300 })
+    .toBuffer();
+
+  await sharp(base)
+    .composite([
+      { input: overlay, top: 0, left: 0 },
+      { input: logo, top: 96, left: 90 },
+    ])
+    .jpeg({ quality: 88, mozjpeg: true })
+    .toFile(path.join(PUBLIC, "og.jpg"));
+  console.log("[generate-og] wrote public/og.jpg (1200×630, photo + logo)");
 
   await sharp(Buffer.from(iconSvg(180)))
     .png()
