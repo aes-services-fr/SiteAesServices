@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { site } from "../lib/site";
 import { asset } from "../lib/asset";
-import { PhoneIcon, MailIcon, MapPinIcon } from "./icons";
+import { PhoneIcon, MailIcon, MapPinIcon, InstagramIcon, FacebookIcon } from "./icons";
 import { ManageCookiesButton } from "./Analytics";
 
 export function Footer() {
@@ -43,8 +43,10 @@ export function Footer() {
                 href={site.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-white/10 px-3 py-1.5 text-xs font-medium hover:bg-white/20"
+                aria-label="Instagram"
+                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs font-medium hover:bg-white/20"
               >
+                <InstagramIcon className="text-base" />
                 Instagram
               </a>
             )}
@@ -53,8 +55,10 @@ export function Footer() {
                 href={site.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-white/10 px-3 py-1.5 text-xs font-medium hover:bg-white/20"
+                aria-label="Facebook"
+                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs font-medium hover:bg-white/20"
               >
+                <FacebookIcon className="text-base" />
                 Facebook
               </a>
             )}
