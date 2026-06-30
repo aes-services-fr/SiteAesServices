@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - claude/laughing-ritchie-btmkt0
   workflow_dispatch:
   # Daily rebuild so the Google rating/review count stays up to date.
   schedule:
