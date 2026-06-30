@@ -25,7 +25,7 @@ const intents: Intent[] = [
     chip: "💶 Tarifs",
     reply: () => ({
       text:
-        "Voici nos tarifs de base :\n• Mise en peinture : à partir de 20 €/m²\n• Ratissage & ponçage : à partir de 20 €/m²\n• Pose de bandes / placo : à partir de 10 €/m²\n• Déco, boiseries & extérieur : sur devis\n\nLe plus juste reste un devis gratuit adapté à votre chantier.",
+        "Voici nos tarifs de base :\n• Mise en peinture : dès 20 €/m²\n• Ratissage & ponçage : dès 20 €/m²\n• Pose de bandes à placo : dès 10 €/m²\n• Déco, boiseries & extérieur : sur devis\n\nLe plus juste reste un devis gratuit adapté à votre chantier.",
       actions: [{ kind: "devis" }, { kind: "tel" }],
     }),
   },

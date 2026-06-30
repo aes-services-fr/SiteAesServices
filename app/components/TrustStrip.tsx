@@ -20,9 +20,9 @@ export function TrustStrip() {
     {
       icon: MapPinIcon,
       title: (
-        <>
+        <span className="whitespace-nowrap">
           {site.city} + <CountUp value={radius} suffix=" km" />
-        </>
+        </span>
       ),
       sub: "Artisan local et disponible",
     },
