@@ -81,6 +81,17 @@ export const site = {
     country: "FR",
   },
 
+  // Coordonnées GPS (centre de La Chapelle-Saint-Ursin) pour le SEO local.
+  geo: { latitude: 47.0664, longitude: 2.3242 },
+
+  // Horaires de disponibilité (cohérents avec la fiche Google).
+  hours: {
+    display: "Lundi au samedi : 8h – 19h",
+    days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    opens: "08:00",
+    closes: "19:00",
+  },
+
   // --- Cible / positionnement ------------------------------------------------
   // Particuliers principalement, ouvert aux professionnels.
   target: "les deux" as const,

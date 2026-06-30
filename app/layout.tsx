@@ -9,8 +9,8 @@ import { ScrollProgress } from "./components/ScrollProgress";
 const title = `${site.name} — ${site.trade}${
   site.city && !site.city.startsWith("<") ? ` à ${site.city}` : ""
 }`;
-const description = `${site.trade} : peinture intérieure et extérieure, ravalement de façade, décoration. Devis gratuit, artisan certifié. ${
-  site.city && !site.city.startsWith("<") ? `Intervention à ${site.city} et alentours.` : ""
+const description = `${site.trade} : peinture intérieure et extérieure, ravalement de façade, décoration. Devis gratuit, artisan local de confiance. ${
+  site.city && !site.city.startsWith("<") ? `Intervention à ${site.city} et dans le Cher.` : ""
 }`;
 
 export const metadata: Metadata = {

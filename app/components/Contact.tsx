@@ -2,7 +2,7 @@ import { site } from "../lib/site";
 import { ContactForm } from "./ContactForm";
 import { GoogleRating } from "./GoogleRating";
 import { BookingButton } from "./BookingButton";
-import { PhoneIcon, WhatsAppIcon, MailIcon, MapPinIcon } from "./icons";
+import { PhoneIcon, WhatsAppIcon, MailIcon, MapPinIcon, ClockIcon } from "./icons";
 
 const PREFILLED = `Bonjour ${site.name}, je souhaite un devis gratuit pour des travaux de peinture.`;
 
@@ -91,6 +91,18 @@ export function Contact() {
                 <span className="block text-xs text-ink-soft">Secteur</span>
                 <span className="block font-semibold text-ink">
                   {site.address.city} et alentours de {site.city}
+                </span>
+              </span>
+            </div>
+
+            <div className="flex items-center gap-4 rounded-2xl border border-line bg-white p-5">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/12 text-accent">
+                <ClockIcon className="text-xl" />
+              </span>
+              <span>
+                <span className="block text-xs text-ink-soft">Horaires</span>
+                <span className="block font-semibold text-ink">
+                  {site.hours.display}
                 </span>
               </span>
             </div>
