@@ -14,7 +14,7 @@ export function Reviews() {
           <GoogleRating variant="dark" />
         </div>
         <h2 className="mt-4 font-serif text-3xl font-bold sm:text-4xl">
-          La confiance de nos clients
+          Ils nous ont fait confiance
         </h2>
         <p className="mx-auto mt-3 max-w-xl text-bg/75">
           {site.google.hasReviews
