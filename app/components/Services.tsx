@@ -36,7 +36,9 @@ export function Services() {
           Prestations
         </p>
         <h2 className="mt-2 font-serif text-3xl font-bold text-ink sm:text-4xl">
-          Des travaux de peinture soignés, du sol au plafond
+          Des travaux de peinture soignés,
+          <br />
+          du sol au plafond
         </h2>
         <p className="mt-3 text-ink-soft">
           Chaque chantier commence par un devis gratuit et détaillé. Voici les
