@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { site } from "../lib/site";
 import { trackEvent } from "../lib/analytics";
-import { WhatsAppIcon, PhoneIcon, CloseIcon } from "./icons";
+import { WhatsAppIcon, PhoneIcon, CloseIcon, RobotIcon } from "./icons";
 
 const WA_PREFILL = `Bonjour ${site.name}, je souhaite un devis gratuit pour des travaux de peinture.`;
 const waHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(WA_PREFILL)}`;
@@ -232,15 +232,7 @@ export function ChatWidget() {
         {open ? (
           <CloseIcon className="text-2xl" />
         ) : (
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-            <circle cx="12" cy="3" r="1" />
-            <path d="M12 4v2.5" />
-            <rect x="4" y="6.5" width="16" height="12" rx="3.5" />
-            <path d="M2 12v3M22 12v3" />
-            <circle cx="9.3" cy="12.2" r="1.25" fill="currentColor" stroke="none" />
-            <circle cx="14.7" cy="12.2" r="1.25" fill="currentColor" stroke="none" />
-            <path d="M9.5 15.6h5" />
-          </svg>
+          <RobotIcon className="text-[28px]" aria-hidden />
         )}
         <span className="absolute right-0 top-0 h-3 w-3 rounded-full bg-sage ring-2 ring-bg" />
       </button>
@@ -257,8 +249,8 @@ export function ChatWidget() {
             {/* Header */}
             <div className="flex items-center justify-between bg-ink px-4 py-3 text-bg">
               <div className="flex items-center gap-2">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-sage text-sm font-bold text-ink">
-                  A
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-sage text-ink">
+                  <RobotIcon className="text-xl" />
                 </span>
                 <span className="leading-tight">
                   <span className="block text-sm font-semibold">Assistant AES</span>
@@ -312,13 +304,13 @@ export function ChatWidget() {
             </div>
 
             {/* Quick replies */}
-            <div className="flex flex-wrap gap-1.5 border-t border-line bg-bg px-3 pt-2">
+            <div className="flex shrink-0 flex-wrap gap-2 border-t border-line bg-bg px-3 py-3">
               {intents.map((it) => (
                 <button
                   key={it.id}
                   type="button"
                   onClick={() => handleIntent(it)}
-                  className="rounded-full bg-bg-soft px-2.5 py-1 text-xs font-medium text-ink ring-1 ring-line hover:bg-sage-soft"
+                  className="rounded-full bg-bg-soft px-3 py-1.5 text-xs font-medium text-ink ring-1 ring-line transition-colors hover:bg-sage-soft"
                 >
                   {it.chip}
                 </button>
