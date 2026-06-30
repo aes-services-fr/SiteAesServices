@@ -57,7 +57,7 @@ export function BeforeAfterSlider({
       aria-valuemin={0}
       aria-valuemax={100}
       tabIndex={0}
-      className="relative aspect-[4/3] w-full cursor-ew-resize touch-none select-none overflow-hidden rounded-2xl"
+      className="relative aspect-[4/3] w-full cursor-ew-resize touch-none select-none overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5"
       onPointerDown={(e) => {
         dragging.current = true;
         e.currentTarget.setPointerCapture(e.pointerId);
