@@ -163,9 +163,9 @@ export const services: Service[] = [
   },
   {
     id: "bandes-placo",
-    title: "Pose de bandes & placo",
+    title: "Pose de bandes à placo",
     description:
-      "Collage, doublage et traitement des bandes (joints) du placo, pour une base saine et impeccable.",
+      "Collage et traitement des bandes (joints) sur placo, pour une base saine et impeccable avant peinture.",
     price: "À partir de 10 €/m²",
     category: "Intérieur",
   },
