@@ -121,19 +121,30 @@ export function ChatWidget() {
     },
   ]);
   const [input, setInput] = useState("");
+  const [typing, setTyping] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
-  }, [messages, open]);
+  }, [messages, typing, open]);
 
   const pushBot = (m: Omit<Msg, "from">) =>
     setMessages((prev) => [...prev, { from: "bot", ...m }]);
 
+  // Short "is typing" pause so replies feel human without being slow.
+  const TYPING_DELAY = 650;
+  const botReply = (getReply: () => Omit<Msg, "from">) => {
+    setTyping(true);
+    setTimeout(() => {
+      setTyping(false);
+      pushBot(getReply());
+    }, TYPING_DELAY);
+  };
+
   const handleIntent = (it: Intent) => {
     trackEvent("chat_intent", { source: "chat", intent: it.id });
     setMessages((prev) => [...prev, { from: "user", text: it.chip }]);
-    setTimeout(() => pushBot(it.reply()), 250);
+    botReply(() => it.reply());
   };
 
   const handleSend = () => {
@@ -142,7 +153,7 @@ export function ChatWidget() {
     setInput("");
     setMessages((prev) => [...prev, { from: "user", text }]);
     trackEvent("chat_message", { source: "chat" });
-    setTimeout(() => pushBot(route(text)), 300);
+    botReply(() => route(text));
   };
 
   const goScroll = (target: string) => {
@@ -288,6 +299,16 @@ export function ChatWidget() {
                   </div>
                 </div>
               ))}
+
+              {typing && (
+                <div className="flex justify-start" aria-label="L'assistant écrit…">
+                  <div className="flex items-center gap-1 rounded-2xl rounded-bl-sm bg-white px-3 py-3 ring-1 ring-line">
+                    <span className="typing-dot" />
+                    <span className="typing-dot" />
+                    <span className="typing-dot" />
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Quick replies */}
