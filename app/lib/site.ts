@@ -135,7 +135,7 @@ export const site = {
   formAccessKey: "b3ab4d53-8446-45d7-8aa3-936a81b38ece",
 
   // --- Analytics -------------------------------------------------------------
-  gaMeasurementId: "", // "G-XXXXXXXXXX" si fourni
+  gaMeasurementId: "G-PT6QDN9BD1", // GA4 (public, pas un secret)
 
   // --- Zone d'intervention (villes / quartiers dans un rayon de ~30 km) ------
   areas: [
