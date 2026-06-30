@@ -35,7 +35,7 @@ export function BeforeAfter() {
       </div>
 
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex gap-5">
+        <div className="flex gap-8 sm:gap-10">
           {beforeAfter.map((pair) => (
             <figure
               key={pair.title}
