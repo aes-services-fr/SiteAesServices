@@ -20,6 +20,8 @@ export type GalleryCategory =
   | "Cuisine"
   | "Chambre"
   | "Salle d'eau"
+  | "Entrée"
+  | "Couloir"
   | "Extérieur";
 
 export type GalleryImage = {
@@ -200,6 +202,8 @@ export const galleryCategories: GalleryCategory[] = [
   "Cuisine",
   "Chambre",
   "Salle d'eau",
+  "Entrée",
+  "Couloir",
   "Extérieur",
 ];
 
@@ -212,6 +216,11 @@ export const gallery: GalleryImage[] = [
   { src: "/images/realisations/r33.jpg", category: "Salon", alt: "Séjour aux murs taupe avec entrée noire, peinture décorative à Bourges" },
   { src: "/images/realisations/r20.jpg", category: "Salon", alt: "Séjour avec mur d'accent taupe et verrière atelier, mise en couleur à Bourges (18)" },
   { src: "/images/realisations/r13.jpg", category: "Salon", alt: "Séjour gris perle avec verrière, peinture intérieure à Bourges" },
+  { src: "/images/realisations/r48.jpg", category: "Salon", alt: "Pièce de vie aux murs vert anis, peinture intérieure à Bourges (18)" },
+  { src: "/images/realisations/r49.jpg", category: "Salon", alt: "Grand séjour lumineux avec charpente apparente repeinte en blanc, peintre à Bourges (18)" },
+  { src: "/images/realisations/r50.jpg", category: "Salon", alt: "Pièce de vie mansardée repeinte en blanc, peinture intérieure à Bourges (18)" },
+  { src: "/images/realisations/r51.jpg", category: "Salon", alt: "Pièce de vie ouverte repeinte en blanc avec parquet, peintre à Bourges (18)" },
+  { src: "/images/realisations/r54.jpg", category: "Salon", alt: "Salon cosy repeint en blanc avec parquet, peintre en bâtiment à Bourges (18)" },
   // Cuisine
   { src: "/images/realisations/r44.jpg", category: "Cuisine", alt: "Pièce de vie ouverte sur cuisine, mur d'accent terracotta, peintre à Bourges (18)" },
   { src: "/images/realisations/r42.jpg", category: "Cuisine", alt: "Cuisine aux meubles vert sauge et mur terracotta, mise en couleur à Bourges" },
@@ -222,6 +231,12 @@ export const gallery: GalleryImage[] = [
   { src: "/images/realisations/r02.jpg", category: "Chambre", alt: "Dressing sous escalier peint en bleu canard, mise en couleur à Bourges (18)" },
   // Salle d'eau
   { src: "/images/realisations/r32.jpg", category: "Salle d'eau", alt: "Salle d'eau avec faïence et sol béton ciré, peintre en bâtiment à Bourges (18)" },
+  // Entrée
+  { src: "/images/realisations/r46.jpg", category: "Entrée", alt: "Entrée rénovée avec mur taupe et parquet, peintre en bâtiment à Bourges (18)" },
+  { src: "/images/realisations/r52.jpg", category: "Entrée", alt: "Entrée avec plafond laqué brillant et porte vitrée, peinture soignée à Bourges (18)" },
+  // Couloir
+  { src: "/images/realisations/r47.jpg", category: "Couloir", alt: "Couloir avec soubassement bleu foncé et haut clair, peinture décorative à Bourges (18)" },
+  { src: "/images/realisations/r53.jpg", category: "Couloir", alt: "Couloir beige avec sol travertin, peinture intérieure à Bourges (18)" },
   // Extérieur
   { src: "/images/realisations/r22.jpg", category: "Extérieur", alt: "Façade et volet de lucarne repeints, peinture extérieure à Bourges (18)" },
 ];
