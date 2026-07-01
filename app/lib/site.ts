@@ -127,7 +127,7 @@ export const site = {
 
   // --- Domaine / SEO ---------------------------------------------------------
   // Servi sur GitHub Pages pour le moment (basePath /siteaesservices).
-  domain: "https://www.aes-services.fr"
+  domain: "https://aes-services.fr"
 
   // --- Formulaire de devis ---------------------------------------------------
   // Clé d'accès Web3Forms (publique). Vide => repli sur mailto.
