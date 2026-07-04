@@ -20,7 +20,7 @@ export function Footer() {
           />
           <p className="mt-3 max-w-sm text-sm text-bg/70">
             {site.trade} à {site.city}. Peinture intérieure et extérieure,
-            ravalement de façade et décoration. Devis gratuit dans un rayon de{" "}
+            boiseries et décoration. Devis gratuit dans un rayon de{" "}
             {site.radiusKm} km.
           </p>
 

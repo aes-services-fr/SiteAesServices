@@ -11,7 +11,7 @@ export function JsonLd() {
     "@type": "HousePainter",
     "@id": `${baseUrl}/#business`,
     name: site.name,
-    description: `${site.trade} à ${site.city} : peinture intérieure et extérieure, ravalement de façade, décoration. Devis gratuit.`,
+    description: `${site.trade} à ${site.city} : peinture intérieure et extérieure, boiseries, décoration. Devis gratuit.`,
     url: baseUrl,
     image: abs("/og.jpg"),
     telephone: site.phone,

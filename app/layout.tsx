@@ -9,7 +9,7 @@ import { ScrollProgress } from "./components/ScrollProgress";
 const title = `${site.name} — ${site.trade}${
   site.city && !site.city.startsWith("<") ? ` à ${site.city}` : ""
 }`;
-const description = `${site.trade} : peinture intérieure et extérieure, ravalement de façade, décoration. Devis gratuit, artisan local de confiance. ${
+const description = `${site.trade} : peinture intérieure et extérieure, boiseries, décoration. Devis gratuit, artisan local de confiance. ${
   site.city && !site.city.startsWith("<") ? `Intervention à ${site.city} et dans le Cher.` : ""
 }`;
 
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "peintre en bâtiment",
     "peinture intérieure",
     "peinture extérieure",
-    "ravalement façade",
+    "peinture boiseries",
     "décoration murale",
     site.city,
   ].filter((k) => k && !k.startsWith("<")),

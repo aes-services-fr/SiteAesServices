@@ -72,7 +72,7 @@ export function Hero() {
         </motion.h1>
 
         <motion.p variants={item} className="max-w-xl text-lg text-bg/80">
-          Peinture intérieure et extérieure, ravalement de façade et finitions
+          Peinture intérieure et extérieure, boiseries et finitions
           décoratives. Un travail propre, des délais tenus et un devis gratuit
           sans engagement.
         </motion.p>
