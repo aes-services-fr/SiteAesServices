@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Chambre rénovée",
+    "before": "/images/realisations/r34.jpg",
+    "after": "/images/realisations/r37.jpg",
+    "beforeAlt": "Chambre avant travaux, ancien papier peint décollé et murs abîmés, chantier de rénovation à Bourges",
+    "afterAlt": "Chambre repeinte en rose poudré, finitions soignées, peintre en bâtiment à Bourges (18)"
+  },
+  {
+    "title": "Pièce de caractère",
+    "before": "/images/realisations/r39.jpg",
+    "after": "/images/realisations/r40.jpg",
+    "beforeAlt": "Grande pièce avant rénovation, enduits dégradés et rosace de plafond, chantier à Bourges",
+    "afterAlt": "Grande pièce rénovée en blanc, rosace de plafond préservée, peintre à Bourges (18)"
+  },
+  {
+    "title": "Pièce à moulures",
+    "before": "/images/realisations/r38.jpg",
+    "after": "/images/realisations/r41.jpg",
+    "beforeAlt": "Pièce ancienne avant travaux, plâtres et moulures abîmés, chantier de rénovation à Bourges",
+    "afterAlt": "Pièce rénovée en blanc, moulures et rosaces mises en valeur, peintre à Bourges (18)"
+  },
+  {
+    "title": "Entrée & dégagement",
+    "before": "/images/realisations/r26.jpg",
+    "after": "/images/realisations/r29.jpg",
+    "beforeAlt": "Entrée en préparation, sol protégé avant mise en peinture, chantier à Bourges",
+    "afterAlt": "Entrée et dégagement finis, murs beige, peintre en bâtiment à Bourges (18)"
+  },
+  {
+    "title": "Façade & volet",
+    "before": "/images/realisations/r18.jpg",
+    "after": "/images/realisations/r22.jpg",
+    "beforeAlt": "Façade et volet de lucarne avant travaux, peinture extérieure, peintre à Bourges (18)",
+    "afterAlt": "Façade et volet repeints en blanc, peinture extérieure à Bourges (18)"
+  }
+]

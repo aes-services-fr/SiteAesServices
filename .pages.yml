@@ -1,0 +1,59 @@
+# -----------------------------------------------------------------------------
+# Configuration de l'espace d'administration (Pages CMS — https://pagescms.org)
+#
+# Le client se connecte sur https://app.pagescms.org avec son compte GitHub,
+# ouvre ce dépôt, et modifie les sections ci-dessous. Chaque enregistrement crée
+# un commit sur GitHub, ce qui relance automatiquement le déploiement du site.
+# -----------------------------------------------------------------------------
+
+# Où sont rangées les photos.
+# input  = emplacement réel des fichiers dans le dépôt
+# output = chemin tel qu'il est écrit dans le site (doit rester "/images/realisations")
+media:
+  input: public/images/realisations
+  output: /images/realisations
+
+content:
+  # --- Section "Réalisations" (galerie avec filtres par pièce) ---------------
+  - name: realisations
+    label: "Réalisations — galerie photos"
+    type: file
+    path: content/realisations.json
+    format: json
+    list: true
+    fields:
+      - name: src
+        label: Photo
+        type: image
+      - name: category
+        label: Pièce
+        type: select
+        options:
+          values: [Salon, Cuisine, Chambre, "Salle d'eau", Entrée, Couloir, Extérieur]
+      - name: alt
+        label: "Description de la photo (lue par Google — aide au référencement)"
+        type: text
+
+  # --- Section "Transformation" (slider avant / après) -----------------------
+  - name: transformations
+    label: "Transformation — avant / après"
+    type: file
+    path: content/transformations.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Titre du chantier
+        type: string
+      - name: before
+        label: "Photo AVANT travaux"
+        type: image
+      - name: after
+        label: "Photo APRÈS travaux"
+        type: image
+      - name: beforeAlt
+        label: "Description de la photo « avant »"
+        type: text
+      - name: afterAlt
+        label: "Description de la photo « après »"
+        type: text
