@@ -1,5 +1,10 @@
 [
   {
+    "src": "/images/realisations/r42.jpg",
+    "category": "Cuisine",
+    "alt": "Cuisine aux meubles vert sauge et mur terracotta, mise en couleur à Bourges"
+  },
+  {
     "src": "/images/realisations/r14.jpg",
     "category": "Salon",
     "alt": "Grande pièce de vie repeinte en blanc avec poêle à granulés, peintre à Bourges (18)"
@@ -58,11 +63,6 @@
     "src": "/images/realisations/r44.jpg",
     "category": "Cuisine",
     "alt": "Pièce de vie ouverte sur cuisine, mur d'accent terracotta, peintre à Bourges (18)"
-  },
-  {
-    "src": "/images/realisations/r42.jpg",
-    "category": "Cuisine",
-    "alt": "Cuisine aux meubles vert sauge et mur terracotta, mise en couleur à Bourges"
   },
   {
     "src": "/images/realisations/r45.jpg",
@@ -143,5 +143,10 @@
     "src": "/images/realisations/IMG_2285.jpeg",
     "category": "Chambre",
     "alt": "Reprise de bandes d'un contour de velux dans une chambre d'enfant"
+  },
+  {
+    "src": "/images/realisations/324F4D3B-CC87-4106-941C-FDB6E0B507BE.jpeg",
+    "category": "Couloir",
+    "alt": "Couloir entièrement ratisser et repeint. Murs du fond et plafond en terracotta "
   }
 ]
