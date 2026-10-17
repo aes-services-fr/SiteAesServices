@@ -5,7 +5,7 @@
     "alt": "Homegym repeint tout en noir dans une dépendance (garage)"
   },
   {
-    "src": "/images/realisations/B01DD7C0-1F9F-4E55-BF38-B5B6425C7E9F_4_5005_c.jpeg",
+    "src": "/images/realisations/324F4D3B-CC87-4106-941C-FDB6E0B507BE.jpeg",
     "category": "Couloir",
     "alt": "Couloir entièrement ratisser et repeint. Murs du fond et plafond en terracotta "
   },
@@ -13,6 +13,11 @@
     "src": "/images/realisations/2306BCA4-3220-4729-A996-EFA839B5A7D5_1_105_c.jpeg",
     "category": "Chambre",
     "alt": "Bandes à placo, pose de parquet et mise en peinture (chantier en cours) pour cette toute nouvelle chambre"
+  },
+  {
+    "src": "/images/realisations/B01DD7C0-1F9F-4E55-BF38-B5B6425C7E9F_1_105_c.jpeg",
+    "category": "Couloir",
+    "alt": "Couloir entièrement ratisser et repeint. Murs du fond et plafond en terracotta "
   },
   {
     "src": "/images/realisations/r42.jpg",
@@ -160,11 +165,6 @@
     "alt": "Reprise de bandes d'un contour de velux dans une chambre d'enfant"
   },
   {
-    "src": "/images/realisations/324F4D3B-CC87-4106-941C-FDB6E0B507BE.jpeg",
-    "category": "Couloir",
-    "alt": "Couloir entièrement ratisser et repeint. Murs du fond et plafond en terracotta "
-  },
-  {
     "src": "/images/realisations/6EC6D516-95F3-4758-9C87-6CF934CB5AC3_4_5005_c.jpeg",
     "category": "Extérieur",
     "alt": "Hublot poncé et repeint"
@@ -196,6 +196,11 @@
   },
   {
     "src": "/images/realisations/69D76BD7-1835-4056-AC46-92B9947F5EFA_4_5005_c.jpeg",
+    "category": "Chambre",
+    "alt": "Bandes à placo + ponçage pour tout cet étage"
+  },
+  {
+    "src": "/images/realisations/2FFE2C3A-68A3-4A35-828B-30D99B3A5BA2_1_102_o.jpeg",
     "category": "Chambre",
     "alt": "Bandes à placo + ponçage pour tout cet étage"
   }
